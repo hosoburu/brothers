@@ -193,3 +193,9 @@ div::before{
 .skill {
   background-color: deepskyblue;
 }
+
+p {
+  width: 300px;
+  height: 250px;
+  overflow: auto;
+}
