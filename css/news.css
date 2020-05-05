@@ -1,0 +1,45 @@
+＊{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.top-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.top-list li {
+  width: 100%;
+  padding: 0 10px;
+  margin-bottom: 30px;
+  list-style: none;
+  border-bottom: 3px solid;
+}
+
+.top-list li a {
+  display: flex;
+  align-items: center;
+  
+
+}
+
+.top-list li img {
+  flex: 0 1 90px;
+}
+
+.top-list li time,p {
+  font-size: 28px;
+  margin-left: 16px;
+}
+
+img {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.heading-title {
+  text-align: center;
+  font-size: 32px;
+}
