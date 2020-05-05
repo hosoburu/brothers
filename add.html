@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>broters</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/add.css">
+  
 </head>
 <body>
   <header>
-    <h1>団員募集</h1>
+    
   </header>
 <nav>
   <input id="gnav-input" type="checkbox" class="gnav-hidden">
@@ -27,7 +28,8 @@
 </nav>
 
 <form>
-  <table>
+  <h1 class="title">新規団員情報入力フォーム</h1>
+  <table class="form"> 
     <tr>
       <td>
         <label>名前：</label>
@@ -200,7 +202,7 @@
       <td>
         <select name="guild">
           <option value="">-</option>
-          <option value="ドラグーン・ジオ・レギオン">ドラグーン・ジオ・レギオン</option>
+          <option value="ドラゴニック・エターナル・クルセイダー">ドラゴニック・エターナル・クルセイダー</option>
           <option value="サイバネティック・アブソリュート・インフィニティ">サイバネティック・アブソリュート・インフィニティ</option>
           <option value="デビルズ・アクアサンクチュアリ">デビルズ・アクアサンクチュアリ</option>
         </select>
@@ -278,8 +280,11 @@
   </table>
 </form>
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-<input type="submit" name="confirm" id="confirm"　value="登録" />
+&emsp;&emsp;&emsp;&emsp;
+<div class="submitbtn">
+  <input type="submit" name="confirm" id="confirm"　value="登録" />
+
+</div>
 
 </body>
 </html>
