@@ -1,0 +1,20 @@
+
+
+
+@media screen and (max-width:375px){
+#info {
+  width: 330px;
+  display: flex;
+}
+img{
+  width: 300px;
+}
+table {
+  width: 300px;
+}
+header h1 {
+  font-size: 23px;
+  padding:0;
+}
+
+}

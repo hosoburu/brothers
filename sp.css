@@ -1,0 +1,92 @@
+@media screen and (min-width: 769px){
+  body {
+    font-size: 16px;
+    /* width: 100%; */
+  }
+  img {
+    width: 400px;
+  }
+  header {
+    width: 900px;
+  }
+  header h1  {
+    width: 100%;
+    }
+    .top-feature_box p {
+    font-size: 20px;
+    }
+    .top-feature_box h3 {
+    font-size: 32px;
+    }
+    .top-feature  {
+    width: 800px;
+    }
+    .top-feature_box  {
+    font-size: 32px;
+    text-align: center;
+    margin-left: 45px;
+    }
+    .world {
+      
+      margin-top: 60px;
+      width: 400px;
+      margin-left: 0;
+      display: inline-block;
+    }
+    .story {
+      margin: 0 auto;
+    
+      margin-left: 10px;
+      display: inline-block;
+     
+    
+    }
+
+    .pictures {
+      margin-left: 10px;
+    }
+
+    .pictures img {
+      /* display: flex; */
+    width: 200px;
+    border-radius: 15pxpx;
+    margin-left: 20px;
+      
+      
+    }
+
+    .pictures_2 img {
+      width: 170px;
+      border-radius: 70px;
+      border: 3px solid rgb(217, 231, 14);
+    }
+    .innercard {
+      margin-left: 5px;
+      display: block;
+      
+    }
+    
+    .innercard p {
+      font-size: 12px;
+      margin-left: 30px;
+      
+      
+    }
+
+
+
+    
+    
+    }
+    .hoso img{
+      border-radius: 60px;
+      width: 150px;
+      margin-left: 20px;
+      
+    }
+    .hoso-1 {
+      display: flex;
+    }
+      
+    
+  

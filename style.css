@@ -196,11 +196,7 @@ div::before{
 }
 
 .skill {
-  background-color: deepskyblue;
-<<<<<<< HEAD
-  
-}
-=======
+  background-color: deepskyblue; 
 }
 
 p {
@@ -208,4 +204,4 @@ p {
   height: 200px;
   overflow: auto;
 }
->>>>>>> 4d7f0fc277fe26b1db9ab2a288637a2a5bbdfb3e
+
