@@ -1,0 +1,41 @@
+.faq-section {
+  width: 400px;
+}
+
+.faq-section .faq-content {
+  margin-bottom: 60px;
+
+}
+
+.faq-content p {
+  font-weight: bold;
+  font-family: monospace;
+  display: flex;
+  font-size: 17px;
+
+}
+
+.faq-section h2:before, .faq-section p:before {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1;
+  margin-top: -0.16em;
+  margin-right: 15px;
+  font-family: cursive;
+  margin-left: 20px;
+}
+
+.faq-section h2:before {
+  content: "Q ";
+}
+
+.faq-section p:before {
+  content: "A ";
+  color: rgb(45, 103, 179);
+}
+
+section::after {
+  content: "";
+  
+  clear: both;
+}
