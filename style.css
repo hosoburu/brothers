@@ -7,6 +7,11 @@ h1{
   color: rgb(39, 124, 173);
 }
 
+.title {
+  margin-top: 200px;
+  color: black;
+}
+
 #gnav-content{
   position: fixed;
   top:0;
@@ -196,7 +201,7 @@ div::before{
 }
 
 .skill {
-  background-color: deepskyblue; 
+  background-color: rgb(205, 225, 231); 
 }
 
 p {

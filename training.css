@@ -2,3 +2,24 @@ img {
   width: 200px;
 }
 
+main {
+  height: 90vh;
+  width: 100%;
+  background-image: url("../brothers/img/hospital.jpg") ;
+  background-size: cover;
+}
+
+.footer-info {
+  background-color: cornflowerblue;
+  color: black;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+  
+}
+
+nav {
+  position: absolute;
+}
+
+  
