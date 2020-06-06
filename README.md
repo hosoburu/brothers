@@ -20,3 +20,14 @@ terminal(Mac)編
 ③②と同じ要領で/git→/brotersに移動する 例) cd git cd broters
 
 ④git statusコマンドでいつものmodifyとかnewとか表示されているか確認する。 例) git status ⑤表示されていればOK
+
+
+■エラー対処
+①$git pullできない
+(base)xxxxxxxxMacBook-Pro:brothers xxxxxxxx$git pull
+error: You have not concluded your merge (MERGE_HEAD exits).
+hint: Please, comit your changes before merging.
+fatal: Exiting because of unfinished merging.
+
+$git pullはリモートリポジトリ(クラウドにあげてるソースコード)の内容をローカルリポジトリ(自分の作業端末)に反映させるコマンド。
+上記のようなエラーが出たら、$git statusで赤色のファイル(addしてないファイル)がないか確認し、あればいったんコミットしてから$git pullすればよい。
