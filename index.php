@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <?php include('common/header.php'); ?>
+  <?php include('php/common/header.php'); ?>
   <section>
     <h1><a href="#">BROTHERSとは？</a></h1>
     <div class="video">
@@ -25,7 +25,7 @@
         事で様々な技術革新が行われた。その結果、ヌイグルミ王国は悠久の平和を手に入れることに成功したのだ。人間界にはその恩恵として癒しと平和のエネルギーがヌイグルミ王国より供給され、今日に至るまで友好な相互関係が築かれつつある。
       </p>
     </div>
-    <?php include('common/footer.php'); ?>
+    <?php include('php/common/footer.php'); ?>
   </section>
 </body>
 
