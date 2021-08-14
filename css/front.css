@@ -6,7 +6,7 @@ body {
   width: 1100px;
   margin: 0 auto;
   border:solid 2px rgb(77, 74, 74);
-  background: url("img/papirususu.webp");
+  background: url("../img/papirususu.webp");
 }
 
 header {
@@ -92,9 +92,9 @@ ul {
  font-size: 17px;
 }
 
-main {
+/* main {
   background-image: url("//brothers2/brothers/img/p");
-}
+} */
 .container {
   display: inline-block;
 }
