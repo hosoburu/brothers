@@ -9,12 +9,11 @@
   <link rel="stylesheet" href="css/spm.css" type="text/css" media="screen and (max-width: 375px)">
   <link rel="icon" href="img/fabicon.ico">
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="js/common.js"></script>
 
 </head>
 
 <body>
-  <div id="header"></div>
+  <?php include('./common/header.php'); ?>
   <section>
     <h1><a href="#">BROTHERSとは？</a></h1>
     <div class="video">
@@ -26,7 +25,7 @@
         事で様々な技術革新が行われた。その結果、ヌイグルミ王国は悠久の平和を手に入れることに成功したのだ。人間界にはその恩恵として癒しと平和のエネルギーがヌイグルミ王国より供給され、今日に至るまで友好な相互関係が築かれつつある。
       </p>
     </div>
-    <div id="footer"></div>
+    <?php include('./common/footer.php'); ?>
   </section>
 </body>
 
