@@ -27,6 +27,7 @@
   $id = $_POST["id"];
   $name = $_POST["name"];
   $explanation = $_POST["explanation"];
+  $img = $_POST["img"];
   $atk = $_POST["atk"];
   $def = $_POST["def"];
   $spd = $_POST["spd"];
@@ -40,8 +41,8 @@
   $skill6 = $_POST["skill6"];
 
   // INSERT文を変数に格納
-  $sql = "INSERT INTO t_member (id, name, explanation, atk, def, spd, hp, mp, skill1, skill2, skill3, skill4, skill5, skill6)
-  VALUES($id, '$name', '$explanation', $atk, $def, $spd, $hp, $mp, '$skill1', '$skill2', '$skill3', '$skill4', '$skill5', '$skill6')";
+  $sql = "INSERT INTO t_member (id, name, explanation, img, atk, def, spd, hp, mp, skill1, skill2, skill3, skill4, skill5, skill6)
+  VALUES($id, '$name', '$explanation','$img', $atk, $def, $spd, $hp, $mp, '$skill1', '$skill2', '$skill3', '$skill4', '$skill5', '$skill6')";
   //SQLをセッションに格納
   $_SESSION['sql'] = $sql;
   ?>
@@ -104,6 +105,10 @@
         <tr>
           <td><label for="name">説明：</label></td>
           <td><textarea name="explanation" cols="30" rows="5"><?php echo $_POST["explanation"] ?></textarea></td>
+        </tr>
+        <tr>
+          <td> <label for="name">画像：</label></td>
+          <td><input type="text" name="img" value="<?php echo $_POST["img"] ?>"></td>
         </tr>
         <tr>
           <td><label for="name">ATK：</label></td>

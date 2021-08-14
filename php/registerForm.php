@@ -29,6 +29,10 @@
         <td><textarea name="explanation" cols="30" rows="5"></textarea></td>
       </tr>
       <tr>
+        <td> <label for="name">画像：</label></td>
+        <td><input type="text" name="img"></td>
+      </tr>
+      <tr>
         <td><label for="name">ATK：</label></td>
         <td><input type="text" name="atk"></td>
       </tr>
