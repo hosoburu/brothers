@@ -9,7 +9,7 @@
         <ul class="gnav-list">
 
             <li><a href="front.php">TOP</a></li>
-            <li><a href="../index.html">ブラザーズとは</a></li>
+            <li><a href="index.php">ブラザーズとは</a></li>
             <li><a href="news.php">お知らせ</a></li>
             <li><a href="member.php">メンバー</a></li>
             <li><a href="history.php">歴史</a></li>
