@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <?php include('./common/header.php'); ?>
+  <!-- <?php include('./common/header.php'); ?> -->
   <header>BROTHERS</header>
   <div>
     <nav>
