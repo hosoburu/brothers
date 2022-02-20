@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>broters</title>
-  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <!-- <link rel="stylesheet" href="../css/style.css"> -->
   <link rel="stylesheet" href="../css/history.css">
   <link href="../css/sp.css" rel="stylesheet" type="text/css" media="screen and (min-width: 768px)" />
   <link rel="icon" href="../img/fabicon.ico">

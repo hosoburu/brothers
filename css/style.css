@@ -92,8 +92,6 @@ img {
   
 }
 
-
-
 h1 {
   font-size: 36px;
   padding: 15px;
@@ -112,17 +110,11 @@ h1 {
   background-color: rgb(238, 198, 162);
   color: rgb(49, 49, 47);
   border-radius: 20px;
-  
-
 }
 
 .info-content {
   border: 2px solid;
   border-radius: 20px;
-  
-
-   
-
 }
 
 div{position: relative;}
@@ -196,8 +188,7 @@ div::before{
   border: 1px solid;
   border-radius: 5px;
   padding: 15px;
-  overflow: 
-
+  overflow: overflow-x;
 }
 
 .skill {
@@ -206,13 +197,23 @@ div::before{
 
 .video{
   position:relative;
-  width:100%;
-  padding-top:56.25%;
+  padding-top:56.25%; /* youtubeのアスペクト比を固定化して可変させるためのパーセンテージ */
 }
-.video iframe{
-  position:absolute;
-  top:0;
-  right:0;
-  width:100%;
-  height:100%;
+
+.main{
+  margin-right: 10%;
+  margin-left: 10%;
 }
+
+/* .slick-slide video {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+} */
