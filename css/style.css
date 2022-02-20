@@ -205,6 +205,10 @@ div::before{
   margin-left: 10%;
 }
 
+.slider{
+  text-align:  center; 
+}
+
 /* .slick-slide video {
   display: block;
   position: absolute;
