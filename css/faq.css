@@ -1,5 +1,5 @@
 .faq-section {
-  width: 400px;
+  width: auto;
 }
 
 .faq-section .faq-content {
@@ -12,7 +12,15 @@
   font-family: monospace;
   display: flex;
   font-size: 17px;
+  background-color: navajowhite;
+  border-radius: 10px;
+  border:4px solid slategrey;
+}
 
+.faq-content h2 {
+  background-color:seashell;
+  border-radius: 10px;
+  border:4px solid slategrey;
 }
 
 .faq-section h2:before, .faq-section p:before {

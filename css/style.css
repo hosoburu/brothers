@@ -12,93 +12,14 @@ h1{
   color: black;
 }
 
-#gnav-content{
-  position: fixed;
-  top:0;
-  left:-100%;
-  z-index: 100;
-  width: 100%;
-  max-width: 240px;
-  box-shadow: 6px 0 25px rgba(0,0,0,0.15);
-  transition: 0.3s;
-}
-ul.gnav-list{
-  background-color:rgb(64, 71, 69);
-  padding: 0;
-  height: 100vh;
-  text-align: center;
-  border-radius: 25px;
-}
 
-ul.gnav-list li{
-  display: block;
-  border-bottom: 2px dotted ;
-}
 
-ul.gnav-list li a {
-  display: block;
-  padding: 1.5em;
-  color: #fff;
-  font-size: 12px;
-  text-decoration: none;
-  border-radius: 25px;
-}
-ul.gnav-list li a::first-line{
-  font-size: 16px;
-  font-weight: bold;
-}
-.gnav-hidden{display: none;}
-
-#gnav-btn{
-  display: block;
-  width: 40px;
-  height: 40px;
-  position: fixed;
-  top:20px;
-  right:20px;
-  z-index: 100;
-  background: url("../img/open_btn_g.png")center center no-repeat;
-  background-size: cover;
-}
-
-#gnav-black{
-  display: none;
-  position: fixed;
-  z-index: 90;
-  top:0;
-  left:0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 25px;
-}
-#gnav-input:checked ~ #gnav-btn 
-{background: url("../img/close_NG.png")center center no-repeat;}
-
-#gnav-input:checked ~ #gnav-black{display: block;}
-#gnav-input:checked ~ #gnav-content {left:0;}
-
-header h1 {
-  text-align: center;
-  background-color: rgb(67, 70, 69);
-  top:20px;
-  margin: 0;
-  line-height: 2.5rem;
-  border-radius: 25px;
-}
 
 img {
   width:340px;
   
 }
 
-h1 {
-  font-size: 36px;
-  padding: 15px;
-  padding-left: 54px;
-  padding-bottom: 15px;
-  margin-bottom: 3px;
-}
 
 .inner {
   padding: 0 15px;
@@ -197,16 +118,13 @@ div::before{
 
 .video{
   position:relative;
-  padding-top:56.25%; /* youtubeのアスペクト比を固定化して可変させるためのパーセンテージ */
-}
-
-.main{
-  margin-right: 10%;
-  margin-left: 10%;
+  /* youtubeのアスペクト比を固定化して可変させるためのパーセンテージ */
+  padding-top:56.25%; 
 }
 
 .slider{
-  text-align:  center; 
+  /* text-align: center;  */
+  margin: auto;
 }
 
 /* .slick-slide video {
@@ -222,6 +140,27 @@ div::before{
   transform: translate(-50%, -50%);
 } */
 
-.footer-info {
-  text-align: center;
+/* https://www.will3in.co.jp/frontend-blog/article/shrink-webpage-with-iframe-responsive/ */
+.frame {
+  height: 0;
+  overflow: hidden;
+}
+.pc .frame {
+  padding-top: 62.5%;
+}
+iframe {
+  transform-origin: 0 0;
+}
+.pc iframe {
+  margin-top: -62.5%;
+  transform: scale(0.6);
+}
+
+.text_area{
+  border-radius: 10px;
+  border:4px solid slategrey;
+  margin: 10px;
+  height: auto;
+  background-color:whitesmoke;
+  overflow: auto;
 }

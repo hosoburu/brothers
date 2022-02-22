@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>メンバー登録 完了画面</title>
+  <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/member.css">
   <link rel="stylesheet" href="../css/spc.css" type="text/css" media="screen and (max-width: 375px)">
@@ -13,6 +14,7 @@
 
 <body>
   <?php include('./common/header.php'); ?>
+  <h2 class="heading-title">RECRUITMENT COMPLETION</h2>
   <?php include('./db/db.php'); ?>
 
   <?php

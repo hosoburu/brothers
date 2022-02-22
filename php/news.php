@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>broters</title>
+  <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/news.css">
   <link rel="icon" href="../img/fabicon.ico">
@@ -23,7 +24,7 @@ $sql = "SELECT n.id, m.name, m.img, n.explanation, n.hyperlink, n.posted_date
 $stmt = $dbh->query($sql);
 ?>
 <section>
-  <h2 class="heading-title"> NEWS </h2>
+  <h2 class="heading-title">NEWS</h2>
   <ul class="top-list">
     <?php foreach ($stmt as $row) { ?>
       <li>

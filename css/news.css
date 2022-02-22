@@ -39,7 +39,8 @@ img {
   margin-bottom: 20px;
 }
 
-.heading-title {
-  text-align: center;
-  font-size: 32px;
+.top-list_info{
+  background-color:whitesmoke;
+  border-radius: 10px;
+  border:4px solid slategrey;
 }

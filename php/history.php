@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>broters</title>
-  <!-- <link rel="stylesheet" href="../css/style.css"> -->
+  <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/history.css">
   <link href="../css/sp.css" rel="stylesheet" type="text/css" media="screen and (min-width: 768px)" />
   <link rel="icon" href="../img/fabicon.ico">
@@ -15,10 +15,10 @@
 <body>
   <?php include('./common/header.php'); ?>
   <section>
-    <h2>BROTHERSの歴史</h2>
+    <h2 class="heading-title">BROTHERSの歴史</h2>
     <div class="top-feature">
       <div class="top-feature_box">
-        <h3>1994年　12月　旧ヌイグルミ共和国が建国</h3>
+        <h3>1994年 12月 旧ヌイグルミ共和国が建国</h3>
         <p>
           とある世界軸に存在するヌイグルミ共和国、のちのBROTHERS王国でありミッキー元国王により世界平和を掲げて建国される。この王国には意思を持ったヌイグルミ達が生活を営み、地球へ侵略を試みる悪の組織「オカマーズ」を根絶やしにするべく正義の組織「「国家特殊護衛隊」が発足。
         </p>
@@ -28,7 +28,7 @@
     </div>
     <div class="top-feature">
       <div class="top-feature_box">
-        <h3>1999年　夏　国家黎明期</h3>
+        <h3>1999年 夏 国家黎明期</h3>
         <p>
           ブラザーズ王国の軍事力を建国当時から支えていたミズガメとムササビが国家特殊護衛隊の特別顧問として就任。この頃、次期国家特殊護衛隊の新たな希望として次期総司令官に海驢のホソが抜擢される。ただ、ミッキー国王より次期王位継承も視野に入れ、王の試練を与えられる。ここから冒険が始まった。
         </p>
@@ -67,7 +67,7 @@
     </div>
     <div class="top-feature">
       <div class="top-feature_box">
-        <h3>2000年　12月　王国繁栄の礎</h3>
+        <h3>2000年 12月 王国繁栄の礎</h3>
         <p>アザラシの国から遣海豹使として一匹のアザラシが王国に来国。王国繁栄における数々の先進技術を王国に伝播した。<br>
           その功績が認められ、国家防衛大臣としての役を与えられる。</p>
         <a href="member.php">続きを読む</a>
@@ -77,7 +77,7 @@
     </div>
     <div class="top-feature">
       <div class="top-feature_box">
-        <h3>2001年　某月　王国医療の発達</h3>
+        <h3>2001年 某月 王国医療の発達</h3>
         <p>ブラザーズ王国の姉妹国家であるバーバー王国より、海豚のイルが王国に転籍。この頃の王国は技術革新の変遷期でもあったが同時に医療技術にも力を入れており、多額の移籍金を支払いイルを王国病院の理事長として迎いれる。</p>
         <a href="member.php">続きを読む</a>
       </div>
@@ -86,7 +86,7 @@
     </div>
     <!-- <ul class="inner-wraper">
     <div class="inner">   
-      <li>1994年12月16日　BROTERS王国の建国</li>
+      <li>1994年12月16日  BROTERS王国の建国</li>
       <h3>旧ヌイグルミ共和国が建国</h3>
       <img src="img/WORLDMAP.png" alt="">
       <p>とある世界軸に存在するヌイグルミ共和国、のちのBROTHERS王国でありミッキー元国王により世界平和を掲げて建国される。<br>この王国には意思を持ったヌイグルミ達が生活を営み、地球へ侵略を試みる悪の組織「オカマーズ」を根絶やしにするべく正義の組織<br>「国家特殊護衛隊」を基軸とする軍事力強化が励行。</p> -->

@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>broters</title>
+  <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/member.css">
   <link rel="stylesheet" href="../css/spc.css" type="text/css" media="screen and (max-width: 375px)">
@@ -17,6 +18,7 @@
 
 <body>
   <?php include('./common/header.php'); ?>
+  <h2 class="heading-title">MEMBER LIST</h2>
   <?php include('./db/db.php'); ?>
   <?php
   // SELECT文を変数に格納

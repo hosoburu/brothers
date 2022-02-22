@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>broters</title>
+  <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/faq.css">
   <link rel="icon" href="img/fabicon.ico">
@@ -13,7 +14,7 @@
 
 <body>
   <?php include('./common/header.php'); ?>
-  <h1 class="heading-title">よくある質問</h1>
+  <h2 class="heading-title">よくある質問</h2>
   <section class="faq-section">
     <div class="faq-content">
       <h2>誰が一番強いのですか？</h2>
@@ -23,7 +24,6 @@
       <h2>ブルとは何者？</h2>
       <div>
         <p>一説によるとブルの意向によりブラザーズ王国が建国されたとの噂も、またブルコーポレーションで稼いだ財産により王国の経済が回っている。</p>
-
       </div>
     </div>
     <div class="faq-content">
