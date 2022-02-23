@@ -1,15 +1,13 @@
 <?php
-$host = getenv('HOST');
-$dbName = getenv('DBNAME');
-$user = getenv('USER');
-$password = getenv('PASSWORD');
-$dsn = "pgsql:host={$host};dbname={$dbName}?sslmode=require";
+$url = parse_url(getenv('DATABASE_URL'));
+
+$dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'], 1));
 
 // tryにPDOの処理を記述
 try {
 
   // PDOインスタンスを生成
-  $dbh = new PDO($dsn, $user, $password);
+  $dbh = new PDO($dsn, $url['user'], $url['pass']);
 
   // エラー（例外）が発生した時の処理を記述
 } catch (PDOException $e) {
