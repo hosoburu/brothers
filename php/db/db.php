@@ -3,7 +3,7 @@ $host = getenv('HOST');
 $dbName = getenv('DBNAME');
 $user = getenv('USER');
 $password = getenv('PASSWORD');
-$dsn = "pgsql:host={$host};dbname={$dbName}";
+$dsn = "pgsql:host={$host};dbname={$dbName}?sslmode=require";
 
 // tryにPDOの処理を記述
 try {
