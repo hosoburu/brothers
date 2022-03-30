@@ -26,65 +26,67 @@
   // SQLステートメントを実行し、結果を変数に格納
   $stmt = $dbh->query($sql);
   ?>
-  <?php foreach ($stmt as $row) { ?>
-    <section id="info" class="info-area">
-      <div class="inner info-content">
-        <div class="info-text">
-          <h1>No.<?php echo $row['id'] ?> <?php echo $row['name'] ?> </h1>
-          <p><?php echo $row['explanation'] ?></p>
-        </div>
-        <div class="container">
-          <div>
-            <a href="<?php echo $row['img'] ?>" data-lightbox="group"><img src="<?php echo $row['img'] ?>" width="400" alt="<?php echo $row['name'] ?>の画像"></a>
+  <div class="member-area">
+    <?php foreach ($stmt as $row) { ?>
+      <section id="info" class="info-area">
+        <div class="inner info-content">
+          <div class="info-text">
+            <h1>No.<?php echo $row['id'] ?> <?php echo $row['name'] ?> </h1>
+            <p><?php echo $row['explanation'] ?></p>
           </div>
-          <table>
+          <div class="container">
+            <div>
+              <a href="<?php echo $row['img'] ?>" data-lightbox="group"><img src="<?php echo $row['img'] ?>" width="400" alt="<?php echo $row['name'] ?>の画像"></a>
+            </div>
+            <table>
+              <tr>
+                <th class="col-1">ATK</th>
+                <td><?php echo $row['atk'] ?></td>
+              </tr>
+              <tr>
+                <th class="col-2">DFE</th>
+                <td><?php echo $row['def'] ?></td>
+              </tr>
+              <tr>
+                <th class="col-3"> SPD</th>
+                <td><?php echo $row['spd'] ?></td>
+              </tr>
+              <tr>
+                <th class="col-4">HP</th>
+                <td><?php echo $row['hp'] ?></td>
+              </tr>
+              <tr>
+                <th class="col-5">MP</th>
+                <td><?php echo $row['mp'] ?></td>
+              </tr>
+            </table>
+          </div>
+
+          <table class="skill">
+
             <tr>
-              <th class="col-1">ATK</th>
-              <td><?php echo $row['atk'] ?></td>
+              <th class="skill" colspan="2"> スキル</th>
+            </tr>
+            <td><?php echo $row['skill1'] ?></td>
+            <tr>
+              <td><?php echo $row['skill2'] ?></td>
             </tr>
             <tr>
-              <th class="col-2">DFE</th>
-              <td><?php echo $row['def'] ?></td>
+              <td><?php echo $row['skill3'] ?></td>
             </tr>
             <tr>
-              <th class="col-3"> SPD</th>
-              <td><?php echo $row['spd'] ?></td>
+              <td><?php echo $row['skill4'] ?></td>
             </tr>
             <tr>
-              <th class="col-4">HP</th>
-              <td><?php echo $row['hp'] ?></td>
+              <td><?php echo $row['skill5'] ?></td>
             </tr>
             <tr>
-              <th class="col-5">MP</th>
-              <td><?php echo $row['mp'] ?></td>
+              <td><?php echo $row['skill6'] ?></td>
             </tr>
           </table>
-        </div>
-
-        <table class="skill">
-
-          <tr>
-            <th class="skill" colspan="2"> スキル</th>
-          </tr>
-          <td><?php echo $row['skill1'] ?></td>
-          <tr>
-            <td><?php echo $row['skill2'] ?></td>
-          </tr>
-          <tr>
-            <td><?php echo $row['skill3'] ?></td>
-          </tr>
-          <tr>
-            <td><?php echo $row['skill4'] ?></td>
-          </tr>
-          <tr>
-            <td><?php echo $row['skill5'] ?></td>
-          </tr>
-          <tr>
-            <td><?php echo $row['skill6'] ?></td>
-          </tr>
-        </table>
-    </section>
-  <?php } ?>
+      </section>
+    <?php } ?>
+  </div>
   <?php include('./common/footer.php'); ?>
 </body>
 

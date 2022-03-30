@@ -6,9 +6,6 @@
   img {
     width: 400px;
   }
-  header {
-    width: 900px;
-  }
   header h1  {
     width: 100%;
     }
@@ -20,6 +17,7 @@
     }
     .top-feature  {
     width: 800px;
+    margin: auto;
     }
     .top-feature_box  {
     font-size: 32px;
