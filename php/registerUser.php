@@ -41,5 +41,19 @@ if ($t_brothers['pass'] !== $brotherspass) {
 
 ?>
 
-<h1><?php echo $msg; ?></h1><!--メッセージの出力-->
-<?php echo $link; ?>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新規会員登録完了</title>
+</head>
+
+<body>
+
+    <h1><?php echo $msg; ?></h1><!--メッセージの出力-->
+    <?php echo $link; ?>
+
+</body>
+
+</html>
