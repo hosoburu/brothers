@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>メンバー登録 完了画面</title>
+  <title>メンバー登録 更新画面</title>
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/member.css">
@@ -14,7 +14,7 @@
 
 <body>
   <?php include('./common/header.php'); ?>
-  <h2 class="heading-title">RECRUITMENT COMPLETION</h2>
+  <h2 class="heading-title">UPDATE COMPLETION</h2>
   <?php include('./db/db.php'); ?>
 
   <?php
@@ -27,7 +27,7 @@
   $stmt = $dbh->query($_SESSION['sql']);
   ?>
   <p>
-    メンバーの登録が完了しました。
+    メンバーの更新が完了しました。
   </p>
   <p>
     <label for="name">ID：</label><?php echo $_POST["id"] ?>

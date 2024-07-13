@@ -10,15 +10,11 @@
   <link rel="stylesheet" href="../css/spm.css" type="text/css" media="screen and (max-width: 375px)">
   <link rel="icon" href="../img/fabicon.ico">
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-  <!-- slick -->
   <link rel="stylesheet" type="text/css" href="../css/slick/slick.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="../css/slick/slick-theme.css" media="screen" />
   <script src="../css/slick/slick.min.js"></script>
   <script src="../js/common.js"></script>
-
 </head>
 
 <body>
@@ -26,17 +22,15 @@
     <?php include('./common/header.php'); ?>
     <section>
       <h2 class="heading-title">BROTHERSとは？</h2>
-      <!-- https://digipress.info/tech/how-to-include-youtube-vimeo-video-with-autoplay-slick-js/ -->
-      <!-- https://www.will3in.co.jp/frontend-blog/article/shrink-webpage-with-iframe-responsive/ -->
       <div class="slider">
         <div class="pc">
           <div class="frame">
-            <iframe class="embed-player slide-media" src="https://www.youtube.com/embed/aqQcaak6GSw" width="1280" height="800" frameborder="0"></iframe>
+            <iframe class="embed-player slide-media" src="https://www.youtube.com/embed/aqQcaak6GSw" frameborder="0"></iframe>
           </div>
         </div>
         <div class="pc">
           <div class="frame">
-            <iframe class="embed-player slide-media" src="https://www.youtube.com/embed/X06h5gA0RZs" width="1280" height="800" frameborder="0"></iframe>
+            <iframe class="embed-player slide-media" src="https://www.youtube.com/embed/X06h5gA0RZs" frameborder="0"></iframe>
           </div>
         </div>
       </div>
@@ -54,13 +48,19 @@
   </div>
 </body>
 
-</html>
-
 <script>
   jQuery(function($) {
     $(window).on('load resize', function() {
-      var pc_w = $('.pc .frame').width() / 1280;
-      $('.pc iframe').css('transform', 'scale(' + pc_w + ')');
+      var frameWidth = $('.pc .frame').width();
+      var aspectRatio = 16 / 9; // YouTubeの動画アスペクト比は通常16:9
+
+      // フレームの幅に応じてiframeのサイズを調整
+      $('.pc iframe').css({
+        'width': frameWidth + 'px',
+        'height': frameWidth / aspectRatio + 'px'
+      });
     });
   });
 </script>
+
+</html>

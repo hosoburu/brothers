@@ -31,7 +31,7 @@
       <section id="info" class="info-area">
         <div class="inner info-content">
           <div class="info-text">
-            <h1>No.<?php echo $row['id'] ?> <?php echo $row['name'] ?> </h1>
+            <h1 id="<?php echo $row['id'] ?>">No.<?php echo $row['id'] ?> <?php echo $row['name'] ?> </h1>
             <p><?php echo $row['explanation'] ?></p>
           </div>
           <div class="container">
@@ -84,6 +84,12 @@
               <td><?php echo $row['skill6'] ?></td>
             </tr>
           </table>
+          <form name="form1" method="post" action="updateForm.php">
+            <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+            <p>
+              <input type="submit" value="情報更新">
+            </p>
+          </form>
       </section>
     <?php } ?>
   </div>

@@ -14,10 +14,13 @@
 
 <body>
   <?php include('./common/header.php'); ?>
-  <h2 class="heading-title">RECRUITMENT</h2>
-  <?php include('./db/db.php'); ?>
-
   <?php
+  if (!$_SESSION['login_flag']) {
+    // ログインしていない場合はログインページにリダイレクト
+    header('Location: ../php/loginForm.php');
+    exit;
+  }
+  include('./db/db.php');
   // SELECT文を変数に格納
   $sql = "SELECT MAX(id) as id FROM t_member";
   // SQLステートメントを実行し、結果を変数に格納
@@ -25,9 +28,7 @@
   $max_id;
   ?>
 
-  <?php foreach ($stmt as $row) { ?>
-    <?php $max_id = $row['id'] ?>
-  <?php } ?>
+  <h2 class="heading-title">RECRUITMENT</h2>
 
   <div class="center">
     <form name="form1" method="post" action="registerConfirm.php">
@@ -95,7 +96,7 @@
         </tr>
       </table>
       <div class="test">
-        <input type="submit" value="確認">
+        <input type="submit" value="確認" <?php echo isset($_SESSION['name']) ? '' : 'disabled'; ?>>
       </div>
     </form>
   </div>

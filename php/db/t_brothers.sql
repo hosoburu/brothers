@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS t_brothers;
+CREATE TABLE t_brothers (
+    id VARCHAR(250) PRIMARY KEY,
+    pass VARCHAR(250) NOT NULL
+);

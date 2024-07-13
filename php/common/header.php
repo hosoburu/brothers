@@ -1,7 +1,10 @@
+<?php session_start(); ?>
 <div class="main">
     <header>
-        <h1><a href="/php/index.php">BROTHERS</a></h1>
+        <h1><a href="../php/index.php">BROTHERS</a></h1>
+        <?php include('./common/security/security.php'); ?>
     </header>
+
     <nav>
         <input id="gnav-input" type="checkbox" class="gnav-hidden">
         <label id="gnav-btn" for="gnav-input"></label>
@@ -13,8 +16,46 @@
                 <li><a href="news.php">お知らせ</a></li>
                 <li><a href="member.php">メンバー</a></li>
                 <li><a href="history.php">歴史</a></li>
-                <li><a href="registerForm.php">団員募集</a></li>
+                <?php if (isset($_SESSION['login_flag']) && $_SESSION['login_flag']) : ?>
+                    <li><a href="registerForm.php">団員募集</a></li>
+                <?php else : ?>
+                    <li><span style="color: lightgray;">団員募集</span></li>
+                <?php endif; ?>
                 <li><a href="faq.php">よくある質問</a></li>
             </ul>
         </div>
     </nav>
+
+    <!-- モーダルのHTML -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p>セッションが無効です。ログアウトしました。</p>
+        </div>
+    </div>
+
+    <!-- モーダルのCSS -->
+    <style>
+        .modal {
+            display: none;
+            /* 初期状態では非表示 */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            /* 背景を半透明にする */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            text-align: center;
+        }
+    </style>
+</div>

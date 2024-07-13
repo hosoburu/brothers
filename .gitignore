@@ -105,3 +105,6 @@ hs_err_pid*
 #db connection
 db.php
 db_little.php
+
+api.php
+
