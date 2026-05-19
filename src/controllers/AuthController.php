@@ -24,6 +24,7 @@ class AuthController {
         $pass = $_POST['pass'] ?? '';
         $member = $this->userModel->findByMail($mail);
 
+        header('Content-Type: application/json; charset=utf-8');
         if ($member && password_verify($pass, $member['pass'])) {
             $_SESSION['name']          = $member['name'];
             $_SESSION['mail']          = $member['mail'];

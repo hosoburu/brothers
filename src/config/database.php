@@ -1,6 +1,7 @@
 <?php
 $envFile = __DIR__ . '/../../.env';
 if (!file_exists($envFile)) {
+    header('Content-Type: text/html; charset=utf-8');
     die('.env ファイルが見つかりません。.env.example を参考に .env を作成してください。');
 }
 
