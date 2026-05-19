@@ -19,11 +19,42 @@
 
 ## ディレクトリ構成
 
-- php/ : PHPバックエンド（ページ・認証・DB接続）
-- css/ : スタイルシート（スマホ対応含む）
-- js/ : JavaScript
-- img/ : 画像素材
-- common/ : 共通HTML（header / footer）
+MVC構成を採用。ロジック・DB操作・表示を分離している。
+
+```
+brothers/
+├── public/              # ドキュメントルート（Webから公開）
+│   ├── index.php        # エントリーポイント（コントローラー呼び出しのみ）
+│   ├── css/             # スタイルシート（スマホ対応含む）
+│   ├── img/             # 画像素材
+│   ├── js/              # JavaScript
+│   ├── auth/            # 認証エントリーポイント（ログイン・会員登録）
+│   ├── entry/           # 団員登録エントリーポイント
+│   ├── pages/           # 各ページエントリーポイント
+│   └── update/          # メンバー更新エントリーポイント
+├── src/                 # PHPロジック（Webから直接アクセス不可）
+│   ├── config/          # 設定ファイル
+│   │   └── database.php # DB接続設定（環境自動判定）
+│   ├── models/          # モデル（DB操作）
+│   │   ├── Database.php # PDO接続シングルトン
+│   │   ├── UserModel.php
+│   │   ├── MemberModel.php
+│   │   └── NewsModel.php
+│   ├── controllers/     # コントローラー（リクエスト処理・ロジック）
+│   │   ├── AuthController.php
+│   │   ├── EntryController.php
+│   │   ├── PageController.php
+│   │   └── UpdateController.php
+│   ├── views/           # ビュー（HTMLテンプレート）
+│   │   ├── layout/      # 共通レイアウト（header / footer）
+│   │   ├── auth/        # 認証ビュー
+│   │   ├── entry/       # 団員登録ビュー
+│   │   ├── pages/       # 各ページビュー
+│   │   └── update/      # メンバー更新ビュー
+│   └── common/          # 共通処理
+│       └── security/    # セッション検証
+└── database/            # SQLマイグレーション
+```
 
 ## サーバー起動コマンド
 
@@ -43,7 +74,7 @@ mysql.server stop    # 停止
 mysql -uroot         # ログイン
 
 # PHPサーバー
-php -S localhost:8000 &  # バックグラウンド起動
+php -S localhost:8000 -t public &  # バックグラウンド起動
 pkill -f "php -S"        # 停止
 ```
 
