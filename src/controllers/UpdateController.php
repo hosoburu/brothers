@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../models/MemberModel.php';
+require_once __DIR__ . '/../common/security/csrf.php';
 
 class UpdateController {
     private MemberModel $memberModel;
@@ -37,6 +38,7 @@ class UpdateController {
         $skill5      = $row['skill5']      ?? '';
         $skill6      = $row['skill6']      ?? '';
 
+        $csrfToken = csrf_token();
         require __DIR__ . '/../views/update/form.php';
     }
 
@@ -45,6 +47,7 @@ class UpdateController {
             header('Location: /auth/form.php');
             exit;
         }
+        csrf_validate();
         $id          = (int) ($_SESSION['id'] ?? 0);
         $name        = $_POST['name']        ?? '';
         $explanation = $_POST['explanation'] ?? '';
@@ -66,8 +69,9 @@ class UpdateController {
             'skill1', 'skill2', 'skill3', 'skill4', 'skill5', 'skill6'
         );
 
-        $errorFlg = empty($name) || empty($atk) || empty($def) || empty($spd)
-                 || empty($hp) || empty($mp) || empty($skill1);
+        $errorFlg  = empty($name) || empty($atk) || empty($def) || empty($spd)
+                  || empty($hp) || empty($mp) || empty($skill1);
+        $csrfToken = csrf_token();
 
         require __DIR__ . '/../views/update/confirm.php';
     }
@@ -77,6 +81,7 @@ class UpdateController {
             header('Location: /auth/form.php');
             exit;
         }
+        csrf_validate();
         $id = (int) ($_SESSION['id'] ?? 0);
         $p  = $_SESSION['update_params'] ?? [];
 

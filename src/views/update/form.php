@@ -19,6 +19,7 @@
 
   <div class="center">
     <form name="form1" method="post" action="/update/confirm.php">
+      <input type="hidden" name="csrf_token" value="<?php echo $h($csrfToken); ?>">
       <table>
         <tr>
           <td><label>名前：</label></td>

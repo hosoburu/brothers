@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../models/UserModel.php';
+require_once __DIR__ . '/../common/security/csrf.php';
 
 class AuthController {
     private UserModel $userModel;
@@ -44,10 +45,12 @@ class AuthController {
     }
 
     public function showSignUpForm(): void {
+        $csrfToken = csrf_token();
         require __DIR__ . '/../views/auth/signUp.php';
     }
 
     public function register(): void {
+        csrf_validate();
         $name         = $_POST['name']        ?? '';
         $mail         = $_POST['mail']        ?? '';
         $pass         = password_hash($_POST['pass'] ?? '', PASSWORD_DEFAULT);

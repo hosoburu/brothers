@@ -24,7 +24,7 @@
   <?php } else { ?>
     <form name="form1" method="post" action="/update/finish.php">
   <?php } ?>
-
+    <input type="hidden" name="csrf_token" value="<?php echo $h($csrfToken); ?>">
     <table>
       <tr>
         <td><label>名前：</label></td>
@@ -84,6 +84,7 @@
     </form>
 
     <form name="form1" method="post" action="/update/form.php">
+      <input type="hidden" name="csrf_token" value="<?php echo $h($csrfToken); ?>">
       <input type="hidden" name="id" value="<?php echo $h($id) ?>">
       <input type="submit" value="戻る">
     </form>

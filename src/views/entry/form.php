@@ -19,66 +19,67 @@
 
   <div class="center">
     <form name="form1" method="post" action="/entry/confirm.php">
+      <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8'); ?>">
       <table>
         <tr>
-          <td><label for="name">ID：</label></td>
-          <td><input readonly type="text" name="id" value="<?php echo htmlspecialchars((string) ($maxId + 1), ENT_QUOTES, 'UTF-8') ?>"></td>
+          <td><label for="id">ID：</label></td>
+          <td><input readonly type="text" id="id" name="id" value="<?php echo htmlspecialchars((string) ($maxId + 1), ENT_QUOTES, 'UTF-8') ?>"></td>
         </tr>
         <tr>
           <td><label for="name">名前：</label></td>
-          <td><input type="text" name="name"></td>
+          <td><input type="text" id="name" name="name"></td>
         </tr>
         <tr>
-          <td><label for="name">説明：</label></td>
-          <td><textarea name="explanation" cols="30" rows="5"></textarea></td>
+          <td><label for="explanation">説明：</label></td>
+          <td><textarea id="explanation" name="explanation" cols="30" rows="5"></textarea></td>
         </tr>
         <tr>
-          <td><label for="name">画像：</label></td>
-          <td><input type="text" name="img" placeholder="/img/filename.jpg"></td>
+          <td><label for="img">画像：</label></td>
+          <td><input type="text" id="img" name="img" placeholder="/img/filename.jpg"></td>
         </tr>
         <tr>
-          <td><label for="name">ATK：</label></td>
-          <td><input type="number" name="atk"></td>
+          <td><label for="atk">ATK：</label></td>
+          <td><input type="number" id="atk" name="atk"></td>
         </tr>
         <tr>
-          <td><label for="name">DEF：</label></td>
-          <td><input type="number" name="def"></td>
+          <td><label for="def">DEF：</label></td>
+          <td><input type="number" id="def" name="def"></td>
         </tr>
         <tr>
-          <td><label for="name">SPD：</label></td>
-          <td><input type="number" name="spd"></td>
+          <td><label for="spd">SPD：</label></td>
+          <td><input type="number" id="spd" name="spd"></td>
         </tr>
         <tr>
-          <td><label for="name">HP：</label></td>
-          <td><input type="number" name="hp"></td>
+          <td><label for="hp">HP：</label></td>
+          <td><input type="number" id="hp" name="hp"></td>
         </tr>
         <tr>
-          <td><label for="name">MP：</label></td>
-          <td><input type="number" name="mp"></td>
+          <td><label for="mp">MP：</label></td>
+          <td><input type="number" id="mp" name="mp"></td>
         </tr>
         <tr>
-          <td><label for="name">スキル1：</label></td>
-          <td><input type="text" name="skill1"></td>
+          <td><label for="skill1">スキル1：</label></td>
+          <td><input type="text" id="skill1" name="skill1"></td>
         </tr>
         <tr>
-          <td><label for="name">スキル2：</label></td>
-          <td><input type="text" name="skill2"></td>
+          <td><label for="skill2">スキル2：</label></td>
+          <td><input type="text" id="skill2" name="skill2"></td>
         </tr>
         <tr>
-          <td><label for="name">スキル3：</label></td>
-          <td><input type="text" name="skill3"></td>
+          <td><label for="skill3">スキル3：</label></td>
+          <td><input type="text" id="skill3" name="skill3"></td>
         </tr>
         <tr>
-          <td><label for="name">スキル4：</label></td>
-          <td><input type="text" name="skill4"></td>
+          <td><label for="skill4">スキル4：</label></td>
+          <td><input type="text" id="skill4" name="skill4"></td>
         </tr>
         <tr>
-          <td><label for="name">スキル5：</label></td>
-          <td><input type="text" name="skill5"></td>
+          <td><label for="skill5">スキル5：</label></td>
+          <td><input type="text" id="skill5" name="skill5"></td>
         </tr>
         <tr>
-          <td><label for="name">スキル6：</label></td>
-          <td><input type="text" name="skill6"></td>
+          <td><label for="skill6">スキル6：</label></td>
+          <td><input type="text" id="skill6" name="skill6"></td>
         </tr>
       </table>
       <div class="test">

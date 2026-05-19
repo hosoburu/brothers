@@ -24,7 +24,7 @@
   <?php } else { ?>
     <form name="form1" method="post" action="/entry/finish.php">
   <?php } ?>
-
+    <input type="hidden" name="csrf_token" value="<?php echo $h($csrfToken); ?>">
     <table>
       <tr>
         <td><label>ID：</label></td>

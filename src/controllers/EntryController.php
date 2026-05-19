@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../models/MemberModel.php';
+require_once __DIR__ . '/../common/security/csrf.php';
 
 class EntryController {
     private MemberModel $memberModel;
@@ -20,7 +21,8 @@ class EntryController {
             header('Location: /auth/form.php');
             exit;
         }
-        $maxId = $this->memberModel->getMaxId();
+        $maxId     = $this->memberModel->getMaxId();
+        $csrfToken = csrf_token();
         require __DIR__ . '/../views/entry/form.php';
     }
 
@@ -29,6 +31,7 @@ class EntryController {
             header('Location: /auth/form.php');
             exit;
         }
+        csrf_validate();
         $id          = $_POST['id']          ?? '';
         $name        = $_POST['name']        ?? '';
         $explanation = $_POST['explanation'] ?? '';
@@ -45,13 +48,15 @@ class EntryController {
         $skill5      = $_POST['skill5']      ?? '';
         $skill6      = $_POST['skill6']      ?? '';
 
+        // confirm→finish間のパラメータ引き継ぎ: $_POSTを再送しないことで改ざんを防ぐ
         $_SESSION['register_params'] = compact(
             'name', 'explanation', 'img', 'atk', 'def', 'spd', 'hp', 'mp',
             'skill1', 'skill2', 'skill3', 'skill4', 'skill5', 'skill6'
         );
 
-        $errorFlg = empty($id) || empty($name) || empty($atk) || empty($def)
-                 || empty($spd) || empty($hp) || empty($mp) || empty($skill1);
+        $errorFlg  = empty($id) || empty($name) || empty($atk) || empty($def)
+                  || empty($spd) || empty($hp) || empty($mp) || empty($skill1);
+        $csrfToken = csrf_token();
 
         require __DIR__ . '/../views/entry/confirm.php';
     }
@@ -61,6 +66,7 @@ class EntryController {
             header('Location: /auth/form.php');
             exit;
         }
+        csrf_validate();
         $p     = $_SESSION['register_params'] ?? [];
         $newId = $this->memberModel->getNextId();
 
@@ -81,7 +87,7 @@ class EntryController {
             ':skill6'      => $p['skill6']      ?? '',
         ]);
 
-        unset($_SESSION['register_params']);
+        unset($_SESSION['register_params']); // 二重送信を防ぐためDBへの書き込み後に破棄
         $memberName = $p['name'] ?? '';
         require __DIR__ . '/../views/entry/finish.php';
     }
