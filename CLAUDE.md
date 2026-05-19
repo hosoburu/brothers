@@ -56,12 +56,26 @@ brothers/
 └── database/            # SQLマイグレーション
 ```
 
+## 環境変数ファイル
+
+| ファイル          | 用途                                   | git管理  |
+| ----------------- | -------------------------------------- | -------- |
+| `.env`            | ローカルDB接続 + SSHデプロイ情報       | 対象外   |
+| `.env.production` | 本番サーバー（LittleServer）DB接続情報 | 対象外   |
+| `.env.example`    | 全変数のテンプレート                   | 管理対象 |
+
+新規セットアップ時は `.env.example` をコピーして値を設定する。
+
+```bash
+cp .env.example .env
+```
+
 ## サーバー起動コマンド
 
 Makefile で MySQL と PHP サーバーをまとめて起動・停止できる。
 
 ```bash
-make start   # MySQL + PHPサーバーを同時起動 → http://localhost:8000
+make start   # MySQL + PHPサーバーを同時起動 → http://localhost:8000/index.php
 make stop    # MySQL + PHPサーバーを同時停止
 ```
 
@@ -81,12 +95,31 @@ pkill -f "php -S"        # 停止
 ## Gitワークフロー
 
 ```bash
-git status           # 修正・変更内容の確認
-git add ファイル名   # ステージングに追加（例: git add style.css）
-git add --all        # 編集したファイルをすべて追加
-git pull origin develop   # リモートブランチを取得（pushの前に実行）
-git push origin develop   # リモートに反映
+git status                         # 修正・変更内容の確認
+git add ファイル名                  # ステージングに追加（例: git add style.css）
+# または: git add --all            # 編集したファイルをすべて追加する場合
+git commit -m "コミットメッセージ"  # 変更をコミット
+git pull origin develop            # リモートブランチを取得（pushの前に実行）
+git push origin develop            # リモートに反映
 ```
+
+## 本番デプロイ
+
+```bash
+make deploy  # 確認プロンプト後、本番サーバーに自動デプロイ
+```
+
+内部処理（LittleServer に SSH 接続して以下を実行）:
+
+```bash
+cd <DEPLOY_DIR> && \
+/home/buruyuki/git fetch && \
+/home/buruyuki/git checkout master && \
+/home/buruyuki/git branch -D develop && \
+/home/buruyuki/git checkout develop
+```
+
+> レンタルサーバーの仕様で `git pull` が禁止されているため、developブランチを削除して再チェックアウトする方式をとっている。また `/home/buruyuki/git` はレンタルサーバー上のgitバイナリへのパス。
 
 ## エラー対処
 
