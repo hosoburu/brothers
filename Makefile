@@ -5,9 +5,9 @@ TIMEOUT_PID_FILE := /tmp/brothers_timeout.pid
 
 start:
 	mysql.server start
-	php -S localhost:8000 &
-	@sleep 1 && open http://localhost:8000
-	@echo "起動完了 → http://localhost:8000"
+	php -S localhost:8000 -t src &
+	@sleep 1 && open http://localhost:8000/php/index.php
+	@echo "起動完了 → http://localhost:8000/php/index.php"
 	@( sleep $$(($(TIMEOUT_MINS) * 60)); mysql.server stop; pkill -f "php -S" || true; echo "⏰ $(TIMEOUT_MINS)分経過：サーバーを自動停止しました" ) & echo $$! > $(TIMEOUT_PID_FILE)
 	@echo "⏰ $(TIMEOUT_MINS)分後に自動停止します（即時停止: make stop）"
 

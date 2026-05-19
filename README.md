@@ -17,6 +17,24 @@ make stop    # MySQL + PHPサーバーを同時停止
 
 > バッテリー消費が高いため、作業後は必ず `make stop` で停止すること。
 
+## DB アクセス
+
+`src/php/db/db.php` を include することで PDO 接続オブジェクト `$dbh` が使える。
+
+```php
+include('./db/db.php');
+
+// 全件取得
+$stmt = $dbh->query("SELECT * FROM t_user");
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// 条件指定（プレースホルダを使うこと）
+$stmt = $dbh->prepare("SELECT * FROM t_user WHERE id = ?");
+$stmt->execute([$id]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+```
+
+
 ## ターミナル操作（Mac）
 
 ターミナルを閉じた後の再開手順:
