@@ -19,34 +19,41 @@
 
 
   <?php
-  //セッションを開始
-  session_start();
-  ?>
-
-  <?php
 
   //登録に必要なパラメータを準備
-  $id = $_POST["id"];
-  $name = $_POST["name"];
-  $explanation = $_POST["explanation"];
-  $img = $_POST["img"];
-  $atk = $_POST["atk"];
-  $def = $_POST["def"];
-  $spd = $_POST["spd"];
-  $hp = $_POST["hp"];
-  $mp = $_POST["mp"];
-  $skill1 = $_POST["skill1"];
-  $skill2 = $_POST["skill2"];
-  $skill3 = $_POST["skill3"];
-  $skill4 = $_POST["skill4"];
-  $skill5 = $_POST["skill5"];
-  $skill6 = $_POST["skill6"];
+  $id = $_POST["id"] ?? '';
+  $name = $_POST["name"] ?? '';
+  $explanation = $_POST["explanation"] ?? '';
+  $img = $_POST["img"] ?? '';
+  $atk = $_POST["atk"] ?? '';
+  $def = $_POST["def"] ?? '';
+  $spd = $_POST["spd"] ?? '';
+  $hp = $_POST["hp"] ?? '';
+  $mp = $_POST["mp"] ?? '';
+  $skill1 = $_POST["skill1"] ?? '';
+  $skill2 = $_POST["skill2"] ?? '';
+  $skill3 = $_POST["skill3"] ?? '';
+  $skill4 = $_POST["skill4"] ?? '';
+  $skill5 = $_POST["skill5"] ?? '';
+  $skill6 = $_POST["skill6"] ?? '';
 
-  // INSERT文を変数に格納
-  $sql = "INSERT INTO t_member (id, name, explanation, img, atk, def, spd, hp, mp, skill1, skill2, skill3, skill4, skill5, skill6)
-  VALUES($id, '$name', '$explanation','$img', $atk, $def, $spd, $hp, $mp, '$skill1', '$skill2', '$skill3', '$skill4', '$skill5', '$skill6')";
-  //SQLをセッションに格納
-  $_SESSION['sql'] = $sql;
+  // 登録パラメータをセッションに格納（SQL文字列ではなくパラメータを保存）
+  $_SESSION['register_params'] = [
+    'name'        => $name,
+    'explanation' => $explanation,
+    'img'         => $img,
+    'atk'         => $atk,
+    'def'         => $def,
+    'spd'         => $spd,
+    'hp'          => $hp,
+    'mp'          => $mp,
+    'skill1'      => $skill1,
+    'skill2'      => $skill2,
+    'skill3'      => $skill3,
+    'skill4'      => $skill4,
+    'skill5'      => $skill5,
+    'skill6'      => $skill6,
+  ];
   ?>
 
   <?php

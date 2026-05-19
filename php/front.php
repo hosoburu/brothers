@@ -15,12 +15,12 @@
     <nav>
       <ul class="gnav-list">
         <p>MENU</p>
-        <li><a href="index.html">TOP</a></li>
-        <li><a href="news.html">お知らせ</a></li>
-        <li><a href="menber.html">メンバー</a></li>
-        <li><a href="history.html">歴史</a></li>
-        <li><a href="add.html">団員募集</a></li>
-        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="index.php">TOP</a></li>
+        <li><a href="news.php">お知らせ</a></li>
+        <li><a href="member.php">メンバー</a></li>
+        <li><a href="history.php">歴史</a></li>
+        <li><a href="registerForm.php">団員募集</a></li>
+        <li><a href="faq.php">よくある質問</a></li>
       </ul>
 
     </nav>

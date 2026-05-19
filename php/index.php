@@ -14,7 +14,6 @@
   <link rel="stylesheet" type="text/css" href="../css/slick/slick.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="../css/slick/slick-theme.css" media="screen" />
   <script src="../css/slick/slick.min.js"></script>
-  <script src="../js/common.js"></script>
 </head>
 
 <body>

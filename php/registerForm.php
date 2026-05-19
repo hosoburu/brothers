@@ -25,7 +25,8 @@
   $sql = "SELECT MAX(id) as id FROM t_member";
   // SQLステートメントを実行し、結果を変数に格納
   $stmt = $dbh->query($sql);
-  $max_id;
+  $row = $stmt->fetch(PDO::FETCH_ASSOC);
+  $max_id = $row['id'] ?? 0;
   ?>
 
   <h2 class="heading-title">RECRUITMENT</h2>
@@ -35,7 +36,7 @@
       <table>
         <tr>
           <td><label for="name">ID：</label></td>
-          <td><input disabled type="text" name="id" value="<?php echo $max_id + 1 ?>">
+          <td><input readonly type="text" name="id" value="<?php echo $max_id + 1 ?>">
           </td>
         </tr>
         <tr>
