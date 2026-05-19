@@ -67,7 +67,11 @@ class EntryController {
             exit;
         }
         csrf_validate();
-        $p     = $_SESSION['register_params'] ?? [];
+        if (empty($_SESSION['register_params'])) {
+            header('Location: /entry/form.php');
+            exit;
+        }
+        $p     = $_SESSION['register_params'];
         $newId = $this->memberModel->getNextId();
 
         $this->memberModel->insert($newId, [

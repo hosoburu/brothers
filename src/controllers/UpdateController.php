@@ -20,8 +20,14 @@ class UpdateController {
             header('Location: /auth/form.php');
             exit;
         }
-        $_SESSION['id'] = $_POST['id'] ?? $_SESSION['id'] ?? null;
-        $id  = (int) $_SESSION['id'];
+        if (empty($_SESSION['id'])) {
+            $_SESSION['id'] = (int) ($_POST['id'] ?? 0);
+        }
+        $id = (int) $_SESSION['id'];
+        if ($id === 0) {
+            header('Location: /pages/member.php');
+            exit;
+        }
         $row = $this->memberModel->getById($id);
 
         $name        = $row['name']        ?? '';
@@ -102,6 +108,7 @@ class UpdateController {
         ]);
 
         unset($_SESSION['update_params']);
+        unset($_SESSION['id']);
         $name = $p['name'] ?? '';
         require __DIR__ . '/../views/update/finish.php';
     }
