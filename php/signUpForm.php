@@ -30,7 +30,7 @@
         <div>
             <label>
                 ブラザーズID：
-                <input type="" name="brotherspass" required>
+                <input type="password" name="brotherspass" required>
             </label>
         </div>
         <input type="submit" value="新規登録">

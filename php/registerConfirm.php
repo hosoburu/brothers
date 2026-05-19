@@ -90,8 +90,10 @@
   }
   ?>
 
-  <?php if ($errorFlg) {
-    echo "エラーがあります";
+  <?php
+  $h = fn($v) => htmlspecialchars($v, ENT_QUOTES, 'UTF-8');
+  if ($errorFlg) {
+    echo "エラーがあります（名前・ATK・DEF・SPD・HP・MP・スキル1は必須です）";
   ?>
     <form name="form1" method="post" action="registerConfirm.php">
     <?php
@@ -105,63 +107,63 @@
       <table>
         <tr>
           <td><label for="name">ID：</label></td>
-          <td><input type="text" name="id" value="<?php echo $_POST["id"] ?>"></td>
+          <td><input type="text" name="id" value="<?php echo $h($_POST["id"]) ?>"></td>
         </tr>
         <tr>
           <td> <label for="name">名前：</label></td>
-          <td><input type="text" name="name" value="<?php echo $_POST["name"] ?>"></td>
+          <td><input type="text" name="name" value="<?php echo $h($_POST["name"]) ?>"></td>
         </tr>
         <tr>
           <td><label for="name">説明：</label></td>
-          <td><textarea name="explanation" cols="30" rows="5"><?php echo $_POST["explanation"] ?></textarea></td>
+          <td><textarea name="explanation" cols="30" rows="5"><?php echo $h($_POST["explanation"]) ?></textarea></td>
         </tr>
         <tr>
           <td> <label for="name">画像：</label></td>
-          <td><input type="text" name="img" value="<?php echo $_POST["img"] ?>"></td>
+          <td><input type="text" name="img" value="<?php echo $h($_POST["img"]) ?>"></td>
         </tr>
         <tr>
           <td><label for="name">ATK：</label></td>
-          <td><input type="text" name="atk" value="<?php echo $_POST["atk"] ?>"></td>
+          <td><input type="text" name="atk" value="<?php echo $h($_POST["atk"]) ?>"></td>
         </tr>
         <tr>
           <td> <label for="name">DEF：</label></td>
-          <td><input type="text" name="def" value="<?php echo $_POST["def"] ?>"></td>
+          <td><input type="text" name="def" value="<?php echo $h($_POST["def"]) ?>"></td>
         </tr>
         <tr>
           <td> <label for="name">SPD：</label></td>
-          <td><input type="text" name="spd" value="<?php echo $_POST["spd"] ?>"></td>
+          <td><input type="text" name="spd" value="<?php echo $h($_POST["spd"]) ?>"></td>
         </tr>
         <tr>
           <td> <label for="name">HP：</label></td>
-          <td><input type="text" name="hp" value="<?php echo $_POST["hp"] ?>"></td>
+          <td><input type="text" name="hp" value="<?php echo $h($_POST["hp"]) ?>"></td>
         </tr>
         <tr>
           <td> <label for="name">MP：</label></td>
-          <td><input type="text" name="mp" value="<?php echo $_POST["mp"] ?>"></td>
+          <td><input type="text" name="mp" value="<?php echo $h($_POST["mp"]) ?>"></td>
         </tr>
         <tr>
           <td> <label for="name">スキル1：</label></td>
-          <td><input type="text" name="skill1" value="<?php echo $_POST["skill1"] ?>"></td>
+          <td><input type="text" name="skill1" value="<?php echo $h($_POST["skill1"]) ?>"></td>
         </tr>
         <tr>
           <td> <label for="name">スキル2：</label></td>
-          <td><input type="text" name="skill2" value="<?php echo $_POST["skill2"] ?>"></td>
+          <td><input type="text" name="skill2" value="<?php echo $h($_POST["skill2"]) ?>"></td>
         </tr>
         <tr>
           <td> <label for="name">スキル3：</label></td>
-          <td><input type="text" name="skill3" value="<?php echo $_POST["skill3"] ?>"></td>
+          <td><input type="text" name="skill3" value="<?php echo $h($_POST["skill3"]) ?>"></td>
         </tr>
         <tr>
           <td> <label for="name">スキル4：</label></td>
-          <td><input type="text" name="skill4" value="<?php echo $_POST["skill4"] ?>"></td>
+          <td><input type="text" name="skill4" value="<?php echo $h($_POST["skill4"]) ?>"></td>
         </tr>
         <tr>
           <td> <label for="name">スキル5：</label></td>
-          <td><input type="text" name="skill5" value="<?php echo $_POST["skill5"] ?>"></td>
+          <td><input type="text" name="skill5" value="<?php echo $h($_POST["skill5"]) ?>"></td>
         </tr>
         <tr>
           <td> <label for="name">スキル6：</label></td>
-          <td><input type="text" name="skill6" value="<?php echo $_POST["skill6"] ?>"></td>
+          <td><input type="text" name="skill6" value="<?php echo $h($_POST["skill6"]) ?>"></td>
         </tr>
       </table>
       <input type="submit" value="登録">

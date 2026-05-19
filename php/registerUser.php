@@ -9,11 +9,12 @@ $brotherspass = $_POST['brotherspass'];
 include('./db/db.php');
 
 // ブラザーズIDをチェック
-$sql = "SELECT * FROM t_brothers WHERE id = 'brotherspass'";
+$sql = "SELECT * FROM t_brothers WHERE pass = :brotherspass";
 $stmt = $dbh->prepare($sql);
+$stmt->bindValue(':brotherspass', $brotherspass);
 $stmt->execute();
 $t_brothers = $stmt->fetch();
-if ($t_brothers['pass'] !== $brotherspass) {
+if ($t_brothers === false) {
     $msg = 'ブラザーズIDが違います。';
     $link = '<a href="signUpForm.php">戻る</a>';
 } else {

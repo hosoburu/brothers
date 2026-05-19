@@ -53,23 +53,23 @@
         </tr>
         <tr>
           <td><label for="name">ATK：</label></td>
-          <td><input type="text" name="atk"></td>
+          <td><input type="number" name="atk"></td>
         </tr>
         <tr>
           <td> <label for="name">DEF：</label></td>
-          <td><input type="text" name="def"></td>
+          <td><input type="number" name="def"></td>
         </tr>
         <tr>
           <td> <label for="name">SPD：</label></td>
-          <td><input type="text" name="spd"></td>
+          <td><input type="number" name="spd"></td>
         </tr>
         <tr>
           <td> <label for="name">HP：</label></td>
-          <td><input type="text" name="hp"></td>
+          <td><input type="number" name="hp"></td>
         </tr>
         <tr>
           <td> <label for="name">MP：</label></td>
-          <td><input type="text" name="mp"></td>
+          <td><input type="number" name="mp"></td>
         </tr>
         <tr>
           <td> <label for="name">スキル1：</label></td>
