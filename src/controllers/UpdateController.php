@@ -41,6 +41,10 @@ class UpdateController {
     }
 
     public function confirm(): void {
+        if (empty($_SESSION['login_flag'])) {
+            header('Location: /auth/form.php');
+            exit;
+        }
         $id          = (int) ($_SESSION['id'] ?? 0);
         $name        = $_POST['name']        ?? '';
         $explanation = $_POST['explanation'] ?? '';
@@ -69,6 +73,10 @@ class UpdateController {
     }
 
     public function finish(): void {
+        if (empty($_SESSION['login_flag'])) {
+            header('Location: /auth/form.php');
+            exit;
+        }
         $id = (int) ($_SESSION['id'] ?? 0);
         $p  = $_SESSION['update_params'] ?? [];
 

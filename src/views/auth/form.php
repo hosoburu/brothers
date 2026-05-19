@@ -49,8 +49,11 @@
         function showModal(message) {
             const modal = document.getElementById('myModal');
             const modalMessage = document.getElementById('modalMessage');
-            message = message.replace(/\n/g, '<br>');
-            modalMessage.innerHTML = message;
+            modalMessage.textContent = '';
+            message.split('\n').forEach((line, i) => {
+                if (i > 0) modalMessage.appendChild(document.createElement('br'));
+                modalMessage.appendChild(document.createTextNode(line));
+            });
             modal.style.display = 'block';
             setTimeout(function() {
                 modal.style.display = 'none';

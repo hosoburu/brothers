@@ -4,7 +4,7 @@
     <?php
     // ログイン状態を確認
     if ($_SESSION['login_flag']) {
-        echo "<p>{$_SESSION['name']} さん。ログイン中。</p>";
+        echo '<p>' . htmlspecialchars($_SESSION['name'], ENT_QUOTES, 'UTF-8') . ' さん。ログイン中。</p>';
         echo '<a href="/auth/logout.php">ログアウト</a>';
     } else {
         // セッションに保存されている認証情報が不正な場合は、モーダルを表示してログアウト処理を行い、リダイレクトする

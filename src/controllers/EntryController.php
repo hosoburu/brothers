@@ -25,6 +25,10 @@ class EntryController {
     }
 
     public function confirm(): void {
+        if (empty($_SESSION['login_flag'])) {
+            header('Location: /auth/form.php');
+            exit;
+        }
         $id          = $_POST['id']          ?? '';
         $name        = $_POST['name']        ?? '';
         $explanation = $_POST['explanation'] ?? '';
@@ -53,6 +57,10 @@ class EntryController {
     }
 
     public function finish(): void {
+        if (empty($_SESSION['login_flag'])) {
+            header('Location: /auth/form.php');
+            exit;
+        }
         $p     = $_SESSION['register_params'] ?? [];
         $newId = $this->memberModel->getNextId();
 
