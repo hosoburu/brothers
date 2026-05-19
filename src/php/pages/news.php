@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>broters</title>
-  <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/news.css">
-  <link rel="icon" href="../img/fabicon.ico">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/news.css">
+  <link rel="icon" href="../../img/fabicon.ico">
 </head>
 
-<?php include('./common/header.php'); ?>
-<?php include('./db/db.php'); ?>
+<?php include('../common/header.php'); ?>
+<?php include('../db/db.php'); ?>
 <?php
 // SELECT文を変数に格納
 $sql = "SELECT n.id, m.name, m.img, n.explanation, n.hyperlink, n.posted_date
@@ -40,7 +40,7 @@ $stmt = $dbh->query($sql);
   </ul>
 </section>
 
-<?php include('./common/footer.php'); ?>
+<?php include('../common/footer.php'); ?>
 </body>
 
 </html>

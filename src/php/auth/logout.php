@@ -7,5 +7,5 @@ $_SESSION = array();
 session_destroy();
 
 // index.phpにリダイレクト
-header('Location: ../php/index.php');
+header('Location: /index.php');
 exit;

@@ -5,22 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>メンバー登録 入力画面</title>
-  <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/register/form.css">
-  <link rel="stylesheet" href="../css/spc.css" type="text/css" media="screen and (max-width: 375px)">
-  <link rel="icon" href="../img/fabicon.ico">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/register/form.css">
+  <link rel="stylesheet" href="../../css/spc.css" type="text/css" media="screen and (max-width: 375px)">
+  <link rel="icon" href="../../img/fabicon.ico">
 </head>
 
 <body>
-  <?php include('./common/header.php'); ?>
+  <?php include('../common/header.php'); ?>
   <?php
   if (!$_SESSION['login_flag']) {
     // ログインしていない場合はログインページにリダイレクト
-    header('Location: ../php/loginForm.php');
+    header('Location: /php/auth/form.php');
     exit;
   }
-  include('./db/db.php');
+  include('../db/db.php');
   // SELECT文を変数に格納
   $sql = "SELECT MAX(id) as id FROM t_member";
   // SQLステートメントを実行し、結果を変数に格納
@@ -32,7 +32,7 @@
   <h2 class="heading-title">RECRUITMENT</h2>
 
   <div class="center">
-    <form name="form1" method="post" action="registerConfirm.php">
+    <form name="form1" method="post" action="confirm.php">
       <table>
         <tr>
           <td><label for="name">ID：</label></td>
@@ -102,7 +102,7 @@
     </form>
   </div>
 
-  <?php include('./common/footer.php'); ?>
+  <?php include('../common/footer.php'); ?>
 </body>
 
 </html>

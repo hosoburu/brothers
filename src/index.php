@@ -5,20 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>broters</title>
-  <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/spm.css" type="text/css" media="screen and (max-width: 375px)">
-  <link rel="icon" href="../img/fabicon.ico">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/spm.css" type="text/css" media="screen and (max-width: 375px)">
+  <link rel="icon" href="img/fabicon.ico">
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/slick/slick.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/slick/slick-theme.css" media="screen" />
-  <script src="../css/slick/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/slick/slick.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="css/slick/slick-theme.css" media="screen" />
+  <script src="css/slick/slick.min.js"></script>
 </head>
 
 <body>
   <div class="wrapper">
-    <?php include('./common/header.php'); ?>
+    <?php include('./php/common/header.php'); ?>
     <section>
       <h2 class="heading-title">BROTHERSとは？</h2>
       <div class="slider">
@@ -42,7 +42,7 @@
           その結果、ヌイグルミ王国は悠久の平和を手に入れることに成功したのだ。<br>人間界にはその恩恵として癒しと平和のエネルギーがヌイグルミ王国より供給され、今日に至るまで友好な相互関係が築かれつつある。
         </p>
       </div>
-      <?php include('./common/footer.php'); ?>
+      <?php include('./php/common/footer.php'); ?>
     </section>
   </div>
 </body>

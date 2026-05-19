@@ -8,7 +8,7 @@
 
 <body>
 
-    <form action="registerUser.php" method="post">
+    <form action="user.php" method="post">
         <div>
             <label>
                 名前：
@@ -35,7 +35,7 @@
         </div>
         <input type="submit" value="新規登録">
     </form>
-    <p>すでに会員登録済みの方は<a href="loginForm.php">こちら</a></p>
+    <p>すでに会員登録済みの方は<a href="/php/auth/form.php">こちら</a></p>
 </body>
 
 </html>

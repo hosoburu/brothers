@@ -5,21 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="../css/front.css">
+  <link rel="stylesheet" href="../../css/front.css">
 </head>
 
 <body>
-  <!-- <?php include('./common/header.php'); ?> -->
+  <!-- <?php include('../common/header.php'); ?> -->
   <header>BROTHERS</header>
   <div>
     <nav>
       <ul class="gnav-list">
         <p>MENU</p>
-        <li><a href="index.php">TOP</a></li>
+        <li><a href="/index.php">TOP</a></li>
         <li><a href="news.php">お知らせ</a></li>
         <li><a href="member.php">メンバー</a></li>
         <li><a href="history.php">歴史</a></li>
-        <li><a href="registerForm.php">団員募集</a></li>
+        <li><a href="/php/register/form.php">団員募集</a></li>
         <li><a href="faq.php">よくある質問</a></li>
       </ul>
 
@@ -54,7 +54,7 @@
     </aside>
   </div>
   </div>
-  <?php include('./common/footer.php'); ?>
+  <?php include('../common/footer.php'); ?>
 </body>
 
 </html>

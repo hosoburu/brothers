@@ -5,15 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>broters</title>
-  <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/history.css">
-  <link href="../css/sp.css" rel="stylesheet" type="text/css" media="screen and (min-width: 768px)" />
-  <link rel="icon" href="../img/fabicon.ico">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/history.css">
+  <link href="../../css/sp.css" rel="stylesheet" type="text/css" media="screen and (min-width: 768px)" />
+  <link rel="icon" href="../../img/fabicon.ico">
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 </head>
 
 <body>
-  <?php include('./common/header.php'); ?>
+  <?php include('../common/header.php'); ?>
   <section>
     <h2 class="heading-title">BROTHERSの歴史</h2>
     <div class="top-feature">
@@ -24,7 +24,7 @@
         </p>
         <a href="member.php">続きを読む</a>
       </div>
-      <img class="world" src="../img/WORLDMAP.png" alt="世界地図の画像">
+      <img class="world" src="../../img/WORLDMAP.png" alt="世界地図の画像">
     </div>
     <div class="top-feature">
       <div class="top-feature_box">
@@ -36,9 +36,9 @@
       </div>
 
       <div class="hoso-1">
-        <img src="../img/kyuden.jpeg" alt="宮殿の画像">
+        <img src="../../img/kyuden.jpeg" alt="宮殿の画像">
         <div class="hoso">
-          <img src="../img/hoso.jpg" alt="ホソの画像">
+          <img src="../../img/hoso.jpg" alt="ホソの画像">
         </div>
       </div>
 
@@ -46,19 +46,19 @@
 
         <div class="pictures">
           <div class="innercard">
-            <img class="sky" src="../img/kugun.jpeg" alt="空軍の画像">
+            <img class="sky" src="../../img/kugun.jpeg" alt="空軍の画像">
             <p>空軍大佐のムササビ</p>
 
           </div>
           <div class="innercard">
-            <img class="sea" src="../img/bokan.jpeg" alt="母艦の画像">
+            <img class="sea" src="../../img/bokan.jpeg" alt="母艦の画像">
             <p>陸海軍大佐のミズガメ</p>
           </div>
 
         </div>
         <div class="pictures_2">
-          <img class="sky" src="../img/musasabi.jpg" alt="ムササビの画像">
-          <img class="sea" src="../img/kame.jpg" alt="カメの画像">
+          <img class="sky" src="../../img/musasabi.jpg" alt="ムササビの画像">
+          <img class="sea" src="../../img/kame.jpg" alt="カメの画像">
 
         </div>
       </div>
@@ -72,8 +72,8 @@
           その功績が認められ、国家防衛大臣としての役を与えられる。</p>
         <a href="member.php">続きを読む</a>
       </div>
-      <img src="../img/iceland.jpeg" alt="ブルの国の画像">
-      <img class="buru" src="../img/buru.jpg" alt="ブルの画像">
+      <img src="../../img/iceland.jpeg" alt="ブルの国の画像">
+      <img class="buru" src="../../img/buru.jpg" alt="ブルの画像">
     </div>
     <div class="top-feature">
       <div class="top-feature_box">
@@ -81,8 +81,8 @@
         <p>ブラザーズ王国の姉妹国家であるバーバー王国より、海豚のイルが王国に転籍。この頃の王国は技術革新の変遷期でもあったが同時に医療技術にも力を入れており、多額の移籍金を支払いイルを王国病院の理事長として迎いれる。</p>
         <a href="member.php">続きを読む</a>
       </div>
-      <img src="../img/hospital.jpg" alt="王国病院の画像">
-      <img class="iru" src="../img/iru.jpg" alt=イルの画像">
+      <img src="../../img/hospital.jpg" alt="王国病院の画像">
+      <img class="iru" src="../../img/iru.jpg" alt=イルの画像">
     </div>
     <!-- <ul class="inner-wraper">
     <div class="inner">   

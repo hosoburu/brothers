@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail = $_POST['mail'];
 
     // DB接続
-    include('./db/db.php');
+    include('../db/db.php');
 
     $sql = "SELECT * FROM t_user WHERE mail = :mail";
     $stmt = $dbh->prepare($sql);
@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <br>
             <button type="submit">ログイン</button>
         </form>
-        <p>会員登録がお済みでない方は<a href="signUpForm.php">こちら</a></p>
+        <p>会員登録がお済みでない方は<a href="/php/register/signUp.php">こちら</a></p>
     </div>
 
     <!-- モーダル -->
@@ -133,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // 1秒後にindex.phpに遷移
                 setTimeout(function() {
-                    window.location.href = 'index.php';
+                    window.location.href = '/index.php';
                 }, 1000);
             } else {
                 showModal(result.msg);

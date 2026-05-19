@@ -5,15 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>broters</title>
-  <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/faq.css">
-  <link rel="icon" href="img/fabicon.ico">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/faq.css">
+  <link rel="icon" href="../../img/fabicon.ico">
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 </head>
 
 <body>
-  <?php include('./common/header.php'); ?>
+  <?php include('../common/header.php'); ?>
   <h2 class="heading-title">よくある質問</h2>
   <section class="faq-section">
     <div class="faq-content">
@@ -36,7 +36,7 @@
       <p>クエストを進めていくと道端にBクリスタルというものを発見する事ができる。そのクリスタルを王国内の魔力交換所にて魔導書と交換する事でスキルアップを図る事が可能だ</p>
     </div>
   </section>
-  <?php include('./common/footer.php'); ?>
+  <?php include('../common/footer.php'); ?>
 </body>
 
 </html>

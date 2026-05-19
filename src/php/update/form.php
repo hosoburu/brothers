@@ -5,17 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>メンバー更新 入力画面</title>
-  <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/register/form.css">
-  <link rel="stylesheet" href="../css/spc.css" type="text/css" media="screen and (max-width: 375px)">
-  <link rel="icon" href="../img/fabicon.ico">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/register/form.css">
+  <link rel="stylesheet" href="../../css/spc.css" type="text/css" media="screen and (max-width: 375px)">
+  <link rel="icon" href="../../img/fabicon.ico">
 </head>
 
 <body>
-  <?php include('./common/header.php'); ?>
+  <?php include('../common/header.php'); ?>
   <h2 class="heading-title">UPDATE</h2>
-  <?php include('./db/db.php'); ?>
+  <?php include('../db/db.php'); ?>
 
   <?php
   //セッションを開始
@@ -67,7 +67,7 @@
   <?php } ?>
 
   <div class="center">
-    <form name="form1" method="post" action="updateConfirm.php">
+    <form name="form1" method="post" action="confirm.php">
       <table>
         <!-- <tr>
           <td><label for="name">ID：</label></td>
@@ -137,7 +137,7 @@
     </form>
   </div>
 
-  <?php include('./common/footer.php'); ?>
+  <?php include('../common/footer.php'); ?>
 </body>
 
 </html>

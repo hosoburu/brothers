@@ -3,7 +3,7 @@ session_start();
 $mail = $_POST['mail'];
 
 // DB接続
-include('./db/db.php');
+include('../db/db.php');
 
 $sql = "SELECT * FROM t_user WHERE mail = :mail";
 $stmt = $dbh->prepare($sql);

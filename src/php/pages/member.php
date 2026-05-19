@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>broters</title>
-  <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/member.css">
-  <link rel="stylesheet" href="../css/spc.css" type="text/css" media="screen and (max-width: 375px)">
-  <link rel="icon" href="../img/fabicon.ico">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/member.css">
+  <link rel="stylesheet" href="../../css/spc.css" type="text/css" media="screen and (max-width: 375px)">
+  <link rel="icon" href="../../img/fabicon.ico">
   <!-- ポップアップ用のソース -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -17,9 +17,9 @@
 </head>
 
 <body>
-  <?php include('./common/header.php'); ?>
+  <?php include('../common/header.php'); ?>
   <h2 class="heading-title">MEMBER LIST</h2>
-  <?php include('./db/db.php'); ?>
+  <?php include('../db/db.php'); ?>
   <?php
   // SELECT文を変数に格納
   $sql = "SELECT * FROM t_member ORDER BY id";
@@ -84,7 +84,7 @@
               <td><?php echo $row['skill6'] ?></td>
             </tr>
           </table>
-          <form name="form1" method="post" action="updateForm.php">
+          <form name="form1" method="post" action="/php/update/form.php">
             <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
             <p>
               <input type="submit" value="情報更新">
@@ -93,7 +93,7 @@
       </section>
     <?php } ?>
   </div>
-  <?php include('./common/footer.php'); ?>
+  <?php include('../common/footer.php'); ?>
 </body>
 
 </html>

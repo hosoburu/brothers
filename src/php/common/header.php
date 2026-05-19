@@ -1,8 +1,8 @@
 <?php session_start(); ?>
 <div class="main">
     <header>
-        <h1><a href="../php/index.php">BROTHERS</a></h1>
-        <?php include('./common/security/security.php'); ?>
+        <h1><a href="/index.php">BROTHERS</a></h1>
+        <?php include(__DIR__ . '/security/security.php'); ?>
     </header>
 
     <nav>
@@ -12,16 +12,16 @@
         <div id="gnav-content">
             <ul class="gnav-list">
                 <!-- <li><a href="front.php">TOP</a></li> -->
-                <li><a href="index.php">ブラザーズとは</a></li>
-                <li><a href="news.php">お知らせ</a></li>
-                <li><a href="member.php">メンバー</a></li>
-                <li><a href="history.php">歴史</a></li>
+                <li><a href="/index.php">ブラザーズとは</a></li>
+                <li><a href="/php/pages/news.php">お知らせ</a></li>
+                <li><a href="/php/pages/member.php">メンバー</a></li>
+                <li><a href="/php/pages/history.php">歴史</a></li>
                 <?php if (isset($_SESSION['login_flag']) && $_SESSION['login_flag']) : ?>
-                    <li><a href="registerForm.php">団員募集</a></li>
+                    <li><a href="/php/register/form.php">団員募集</a></li>
                 <?php else : ?>
                     <li><span style="color: lightgray;">団員募集</span></li>
                 <?php endif; ?>
-                <li><a href="faq.php">よくある質問</a></li>
+                <li><a href="/php/pages/faq.php">よくある質問</a></li>
             </ul>
         </div>
     </nav>
