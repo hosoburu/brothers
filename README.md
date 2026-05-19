@@ -4,16 +4,18 @@
 
 > 開発ルール・コマンド等の技術情報は [CLAUDE.md](CLAUDE.md) を参照してください。
 
-## セットアップ
+## ローカル開発の起動・停止
 
-### MySQL の起動・停止
-
-バッテリー消費が高いため、使用後は必ず停止すること。
+プロジェクトのルートディレクトリで以下のコマンドを実行する。
 
 ```bash
-mysql.server start  # 起動
-mysql.server stop   # 停止
+make start   # MySQL + PHPサーバーを同時起動
+make stop    # MySQL + PHPサーバーを同時停止
 ```
+
+起動後は http://localhost:8000 でサイトを確認できる。
+
+> バッテリー消費が高いため、作業後は必ず `make stop` で停止すること。
 
 ## ターミナル操作（Mac）
 

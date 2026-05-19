@@ -27,15 +27,24 @@
 
 ## サーバー起動コマンド
 
+Makefile で MySQL と PHP サーバーをまとめて起動・停止できる。
+
+```bash
+make start   # MySQL + PHPサーバーを同時起動 → http://localhost:8000
+make stop    # MySQL + PHPサーバーを同時停止
+```
+
+個別に操作する場合:
+
 ```bash
 # MySQL
 mysql.server start   # 起動
 mysql.server stop    # 停止
 mysql -uroot         # ログイン
 
-# PHPサーバー（組み込みサーバーで起動する場合）
-php -S localhost:8000
-pkill -f "php -S"    # 停止
+# PHPサーバー
+php -S localhost:8000 &  # バックグラウンド起動
+pkill -f "php -S"        # 停止
 ```
 
 ## Gitワークフロー
