@@ -19,11 +19,13 @@ class MemberModel {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    // 入力フォームの「現在の最大ID」表示用（登録には使わない）
     public function getMaxId(): int {
         $row = $this->db->query("SELECT MAX(id) AS id FROM t_member")->fetch(PDO::FETCH_ASSOC);
         return (int) ($row['id'] ?? 0);
     }
 
+    // INSERT用の次ID採番: COALESCE でテーブルが空のとき MAX が NULL になるケースを回避
     public function getNextId(): int {
         $row = $this->db->query("SELECT COALESCE(MAX(id), 0) + 1 AS next_id FROM t_member")->fetch(PDO::FETCH_ASSOC);
         return (int) $row['next_id'];

@@ -9,6 +9,7 @@ class NewsModel {
     }
 
     public function getAll(): array {
+        // LEFT OUTER JOIN: メンバーが削除されてもニュースレコードは残す
         $sql = "SELECT n.id, m.name, m.img, n.explanation, n.hyperlink, n.posted_date
                 FROM t_news AS n
                 LEFT OUTER JOIN t_member AS m ON n.name_id = m.id

@@ -5,6 +5,7 @@ if (!file_exists($envFile)) {
     die('.env ファイルが見つかりません。.env.example を参考に .env を作成してください。');
 }
 
+// INI_SCANNER_RAW: パスワードに '#' や '=' が含まれても値が破損しない
 $env = parse_ini_file($envFile, false, INI_SCANNER_RAW);
 
 return [

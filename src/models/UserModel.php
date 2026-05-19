@@ -23,6 +23,7 @@ class UserModel {
         $stmt->execute();
     }
 
+    // 会員登録は招待コード(t_brothers.pass)を持つ者のみ可能
     public function findBrothersPass(string $brotherspass): array|false {
         $stmt = $this->db->prepare("SELECT * FROM t_brothers WHERE pass = :brotherspass");
         $stmt->bindValue(':brotherspass', $brotherspass);

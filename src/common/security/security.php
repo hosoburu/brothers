@@ -2,14 +2,14 @@
 
     <?php include(__DIR__ . '/security_core.php'); ?>
     <?php
-    // ログイン状態を確認
+    // security_core.phpがDBと照合してlogin_flagを更新済み
     if ($_SESSION['login_flag']) {
         echo '<p>' . htmlspecialchars($_SESSION['name'], ENT_QUOTES, 'UTF-8') . ' さん。ログイン中。</p>';
         echo '<a href="/auth/logout.php">ログアウト</a>';
     } else {
-        // セッションに保存されている認証情報が不正な場合は、モーダルを表示してログアウト処理を行い、リダイレクトする
-        session_unset(); // セッション変数を全て削除
-        session_destroy(); // セッションを破棄
+        // 認証情報がDB照合で失敗した場合: 即リダイレクトせずモーダルを3秒表示してから遷移する
+        session_unset();   // セッション変数を全て削除
+        session_destroy(); // セッションストレージ（ファイル/DB）を削除
         echo '<script>';
         echo 'document.addEventListener("DOMContentLoaded", function() {';
         echo '  var modal = document.getElementById("myModal");';

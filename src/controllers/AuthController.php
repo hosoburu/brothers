@@ -29,6 +29,8 @@ class AuthController {
         if ($member && password_verify($pass, $member['pass'])) {
             $_SESSION['name']          = $member['name'];
             $_SESSION['mail']          = $member['mail'];
+            // パスワードハッシュをセッションに保持し、security_coreがリクエスト毎にDB照合でlogin_flagを再計算する
+            // これによりパスワード変更時にセッションが即時無効化される
             $_SESSION['password_hash'] = $member['pass'];
             echo json_encode(['status' => 'success', 'msg' => "ログインしました。\n1秒後にトップページに遷移します。"]);
         } else {
@@ -38,8 +40,8 @@ class AuthController {
     }
 
     public function logout(): void {
-        $_SESSION = [];
-        session_destroy();
+        $_SESSION = [];          // セッション変数をクリア
+        session_destroy();       // セッションストレージ（ファイル/DB）を削除
         header('Location: /index.php');
         exit;
     }
@@ -56,6 +58,7 @@ class AuthController {
         $pass         = password_hash($_POST['pass'] ?? '', PASSWORD_DEFAULT);
         $brotherspass = $_POST['brotherspass'] ?? '';
 
+        // 招待コード確認 → メール重複確認の順で2段階バリデーション
         $brothers = $this->userModel->findBrothersPass($brotherspass);
         if ($brothers === false) {
             $msg      = 'ブラザーズIDが違います。';
