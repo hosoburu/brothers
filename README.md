@@ -31,19 +31,22 @@ make deploy
 
 ## DB アクセス
 
-`src/php/db/db.php` を include することで PDO 接続オブジェクト `$dbh` が使える。
+`src/models/Database.php` の `Database::connect()` で PDO 接続オブジェクトを取得する（シングルトン）。
+Model クラス内で使う想定のため、直接呼び出しは Model に書くこと。
 
 ```php
-include('./db/db.php');
+require_once __DIR__ . '/Database.php';
+
+$db = Database::connect();
 
 // 全件取得
-$stmt = $dbh->query("SELECT * FROM t_user");
-$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$rows = $db->query("SELECT * FROM t_member ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
 
 // 条件指定（プレースホルダを使うこと）
-$stmt = $dbh->prepare("SELECT * FROM t_user WHERE id = ?");
-$stmt->execute([$id]);
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt = $db->prepare("SELECT * FROM t_member WHERE id = :id");
+$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+$stmt->execute();
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
 ```
 
 

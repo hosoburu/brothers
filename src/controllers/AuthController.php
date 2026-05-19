@@ -55,17 +55,20 @@ class AuthController {
 
         $brothers = $this->userModel->findBrothersPass($brotherspass);
         if ($brothers === false) {
-            $msg  = 'ブラザーズIDが違います。';
-            $link = '<a href="/auth/signUp.php">戻る</a>';
+            $msg      = 'ブラザーズIDが違います。';
+            $linkUrl  = '/auth/signUp.php';
+            $linkText = '戻る';
         } else {
             $existing = $this->userModel->findByMail($mail);
             if ($existing !== false) {
-                $msg  = '同じメールアドレスが存在します。';
-                $link = '<a href="/auth/signUp.php">戻る</a>';
+                $msg      = '同じメールアドレスが存在します。';
+                $linkUrl  = '/auth/signUp.php';
+                $linkText = '戻る';
             } else {
                 $this->userModel->create($name, $mail, $pass);
-                $msg  = '会員登録が完了しました';
-                $link = '<a href="/auth/form.php">ログインページへ</a>';
+                $msg      = '会員登録が完了しました';
+                $linkUrl  = '/auth/form.php';
+                $linkText = 'ログインページへ';
             }
         }
         require __DIR__ . '/../views/auth/userResult.php';

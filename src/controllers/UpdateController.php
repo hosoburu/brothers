@@ -12,6 +12,13 @@ class UpdateController {
     }
 
     public function showForm(): void {
+        if (isset($_SESSION['mail']) && isset($_SESSION['password_hash'])) {
+            require_once __DIR__ . '/../common/security/security_core.php';
+        }
+        if (empty($_SESSION['login_flag'])) {
+            header('Location: /auth/form.php');
+            exit;
+        }
         $_SESSION['id'] = $_POST['id'] ?? $_SESSION['id'] ?? null;
         $id  = (int) $_SESSION['id'];
         $row = $this->memberModel->getById($id);

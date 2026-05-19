@@ -9,7 +9,7 @@
 <body>
 
     <h1><?php echo htmlspecialchars($msg, ENT_QUOTES, 'UTF-8'); ?></h1>
-    <?php echo $link; ?>
+    <a href="<?php echo htmlspecialchars($linkUrl, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($linkText, ENT_QUOTES, 'UTF-8'); ?></a>
 
 </body>
 

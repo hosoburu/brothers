@@ -16,11 +16,12 @@
   <?php require __DIR__ . '/../layout/header.php'; ?>
   <h2 class="heading-title">RECRUITMENT COMPLETION</h2>
 
+  <?php $h = fn($v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8'); ?>
   <p>メンバーの登録が完了しました。</p>
-  <p><label>ID：</label><?php echo $newId ?></p>
-  <p><label>名前：</label><?php echo htmlspecialchars($memberName, ENT_QUOTES, 'UTF-8') ?></p>
+  <p><label>ID：</label><?php echo $h($newId) ?></p>
+  <p><label>名前：</label><?php echo $h($memberName) ?></p>
   <p>
-    <button type="button"><a href="/pages/member.php#<?php echo $newId ?>">メンバー画面に戻る</a></button>
+    <button type="button"><a href="/pages/member.php#<?php echo $h($newId) ?>">メンバー画面に戻る</a></button>
   </p>
   <?php require __DIR__ . '/../layout/footer.php'; ?>
 </body>

@@ -22,7 +22,7 @@
       <table>
         <tr>
           <td><label for="name">ID：</label></td>
-          <td><input readonly type="text" name="id" value="<?php echo $maxId + 1 ?>"></td>
+          <td><input readonly type="text" name="id" value="<?php echo htmlspecialchars((string) ($maxId + 1), ENT_QUOTES, 'UTF-8') ?>"></td>
         </tr>
         <tr>
           <td><label for="name">名前：</label></td>
