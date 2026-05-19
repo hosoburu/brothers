@@ -85,6 +85,10 @@
     </div>
 
     <script>
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('myModal').style.display = 'none';
+        });
+
         async function login(event) {
             event.preventDefault();
             const form = event.target;

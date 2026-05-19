@@ -52,7 +52,7 @@ public/xxx.php（エントリーポイント・1〜3行のみ）
 **やること：**
 - Controller から渡されたローカル変数の表示
 - `require layout/header.php` / `require layout/footer.php`
-- **出力は必ず `htmlspecialchars($value, ENT_QUOTES, 'UTF-8')` でエスケープする**
+- **出力は必ずエスケープする（`$h($value)` または `htmlspecialchars($value, ENT_QUOTES, 'UTF-8')`。詳細は P0-2 参照）**
 
 **禁止：**
 - DB接続・SQL実行
@@ -70,16 +70,32 @@ public/xxx.php（エントリーポイント・1〜3行のみ）
 
 **XSS 対策（View の全出力に適用）：**
 
+出力箇所が多いViewでは先頭に `$h` ヘルパーを定義して使う：
+
 ```php
-// 全ての動的出力に適用。省略禁止。
+$h = fn($v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8');
+echo $h($value);
+```
+
+出力箇所が少ないViewでは直接呼び出しも可：
+
+```php
 echo htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
 ```
 
-現状、Views 全体でエスケープが省略されている。新規追加・既存修正の際は**必ずエスケープを付ける**。触ったファイルのエスケープ漏れは合わせて修正する。
+いずれのパターンでも省略禁止。既知のXSS箇所は修正済み。新規追加・既存修正の際は**必ずエスケープを付ける**。触ったファイルのエスケープ漏れは合わせて修正する。
 
 **ID 改ざんリスク（UpdateController::showForm）：**
 
-[src/controllers/UpdateController.php:15](src/controllers/UpdateController.php#L15) で `$_SESSION['id'] = $_POST['id'] ?? $_SESSION['id'] ?? null` を行っている。ログイン済みの任意ユーザーが他人の id を POST で送ることで他人のメンバー情報を上書きできる。このファイルを触る際は**必ずこのリスクを確認・報告すること**。
+[src/controllers/UpdateController.php:23-25](src/controllers/UpdateController.php#L23-L25) で以下の処理を行っている：
+
+```php
+if (empty($_SESSION['id'])) {
+    $_SESSION['id'] = (int) ($_POST['id'] ?? 0);
+}
+```
+
+`empty()` ガードにより「既存セッションIDをPOSTで上書きする」旧バグは修正済み。ただしセッションにIDが存在しない状態（再ログイン直後など）では POST から ID を設定できるリスクが残存する。このファイルを触る際は**必ずこのリスクを確認・報告すること**。
 
 **SQL インジェクション対策：**
 SQL は必ず PDO プリペアドステートメントで書く（現行パターン維持）。
@@ -166,8 +182,10 @@ SQL は必ず PDO プリペアドステートメントで書く（現行パタ�
 ## P2 — 推奨（聞かれた時・明らかな場合のみ）
 
 - Service層新設の提案（Controller が50行超 または 複数テーブルをまたぐ更新が発生した時）
-- CSRF対策の導入提案（新規フォームを追加する時）
-- `htmlspecialchars` のヘルパー関数化（エスケープ漏れが繰り返し発生した時）
+
+**導入済みのため提案不要：**
+- CSRF対策 → `src/common/security/csrf.php` として全フォームに導入済み
+- `htmlspecialchars` ヘルパー → 各Viewで `$h = fn($v) => ...` として導入済み
 
 **現時点で不要な設計変更はしない。**
 
