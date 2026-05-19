@@ -1,4 +1,13 @@
 brothers
+
+// バッテリーの消費が高いため、ローカルのMySQLは終了後停止しておくこと。
+// 起動コマンド
+// mysql.server start
+// 停止コマンド
+// mysql.server stop
+// ログイン
+// mysql -uroot
+
 Git操作編
 
 ① status・・・修正・変更内容の確認
@@ -20,7 +29,6 @@ terminal(Mac)編
 ③②と同じ要領で/git→/brotersに移動する 例) cd git cd broters
 
 ④git statusコマンドでいつものmodifyとかnewとか表示されているか確認する。 例) git status ⑤表示されていればOK
-
 
 ■エラー対処
 ①$git pullできない
