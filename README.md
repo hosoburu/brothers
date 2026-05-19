@@ -1,41 +1,25 @@
-brothers
+# BROTHERS
 
-// バッテリーの消費が高いため、ローカルのMySQLは終了後停止しておくこと。
-// 起動コマンド
-// mysql.server start
-// 停止コマンド
-// mysql.server stop
-// ログイン
-// mysql -uroot
+ブラザーズと呼ばれるぬいぐるみ集団の公式サイトです。
 
-Git操作編
+> 開発ルール・コマンド等の技術情報は [CLAUDE.md](CLAUDE.md) を参照してください。
 
-① status・・・修正・変更内容の確認
+## セットアップ
 
-② add・・・commitする前に行うコマンド git add ファイル名～　例えばCSSとかstyle.cssとか git add --all(編集したファイルを全選択)
+### MySQL の起動・停止
 
-③ push・・・git push origin develop pullしてからやる
+バッテリー消費が高いため、使用後は必ず停止すること。
 
-④ pull・・・git hub上のブランチを引き出す
+```bash
+mysql.server start  # 起動
+mysql.server stop   # 停止
+```
 
-terminal(Mac)編
+## ターミナル操作（Mac）
 
-⓪terminalを消した場合に以下の①～④を試す
+ターミナルを閉じた後の再開手順:
 
-①まずは「ls」コマンドで今いるディレクトリの場所を把握、 例)ls
-
-②「ls」コマンドで/Desktopが表示されているようなら「cd」コマンドで/Desktopに移動する。 例)cd Desktop
-
-③②と同じ要領で/git→/brotersに移動する 例) cd git cd broters
-
-④git statusコマンドでいつものmodifyとかnewとか表示されているか確認する。 例) git status ⑤表示されていればOK
-
-■エラー対処
-①$git pullできない
-(base)xxxxxxxxMacBook-Pro:brothers xxxxxxxx$git pull
-error: You have not concluded your merge (MERGE_HEAD exits).
-hint: Please, comit your changes before merging.
-fatal: Exiting because of unfinished merging.
-
-$git pullはリモートリポジトリ(クラウドにあげてるソースコード)の内容をローカルリポジトリ(自分の作業端末)に反映させるコマンド。
-上記のようなエラーが出たら、$git statusで赤色のファイル(addしてないファイル)がないか確認し、あればいったんコミットしてから$git pullすればよい。
+1. `ls` で現在地のディレクトリを確認する
+2. `cd Desktop` で Desktop に移動する
+3. `cd brothers` でプロジェクトに移動する
+4. `git status` で状態を確認する（modify や new が表示されればOK）
