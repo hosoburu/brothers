@@ -17,6 +17,18 @@ make stop    # MySQL + PHPサーバーを同時停止
 
 > バッテリー消費が高いため、作業後は必ず `make stop` で停止すること。
 
+## 本番デプロイ
+
+GitHub に push した後、以下のコマンドで本番サーバーに反映する。
+
+```bash
+make deploy
+```
+
+実行すると確認プロンプトが表示される（`y` で実行、それ以外はキャンセル）。
+
+> 詳細な仕様は [CLAUDE.md](CLAUDE.md) を参照。
+
 ## DB アクセス
 
 `src/php/db/db.php` を include することで PDO 接続オブジェクト `$dbh` が使える。

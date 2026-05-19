@@ -1,7 +1,9 @@
 TIMEOUT_MINS ?= 120
 TIMEOUT_PID_FILE := /tmp/brothers_timeout.pid
 
-.PHONY: start stop
+-include .env
+
+.PHONY: start stop deploy
 
 start:
 	mysql.server start
@@ -16,3 +18,16 @@ stop:
 	pkill -f "php -S" || true
 	@-[ -f $(TIMEOUT_PID_FILE) ] && kill $$(cat $(TIMEOUT_PID_FILE)) 2>/dev/null; rm -f $(TIMEOUT_PID_FILE)
 	@echo "停止完了"
+
+deploy:
+	@printf "本番環境にデプロイします。よろしいですか？ [y/N]: "; \
+	read ans; \
+	if [ "$$ans" != "y" ] && [ "$$ans" != "Y" ]; then echo "キャンセルしました"; exit 1; fi; \
+	echo "デプロイを開始します..."; \
+	ssh $(DEPLOY_USER)@$(DEPLOY_HOST) -p $(DEPLOY_PORT) -i $(DEPLOY_KEY) \
+		"cd $(DEPLOY_DIR) && \
+		/home/$(DEPLOY_USER)/git fetch && \
+		/home/$(DEPLOY_USER)/git checkout master && \
+		/home/$(DEPLOY_USER)/git branch -D develop && \
+		/home/$(DEPLOY_USER)/git checkout develop && \
+		echo 'デプロイ完了'"

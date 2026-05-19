@@ -106,7 +106,7 @@ hs_err_pid*
 db.php
 db_little.php
 .env
-.env.little
+.env.production
 
 api.php
 
