@@ -3,8 +3,80 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BROTHERS</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/img/fabicon.ico">
     <style>
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .auth-card {
+            background-color: rgb(238, 198, 162);
+            border: 2px solid rgb(44, 42, 43);
+            border-radius: 20px;
+            padding: 32px 24px;
+            width: 100%;
+            max-width: 360px;
+            margin: 20px;
+        }
+
+        .auth-card h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 24px;
+            color: rgb(34, 32, 30);
+            background: rgb(194, 202, 202);
+            border: 2px solid rgb(37, 34, 34);
+            border-radius: 12px;
+            padding: 8px;
+        }
+
+        .auth-card label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .auth-card input[type="email"],
+        .auth-card input[type="password"] {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        .auth-card button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(64, 71, 69);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 4px;
+        }
+
+        .auth-card button[type="submit"]:hover {
+            background-color: rgb(44, 51, 49);
+        }
+
+        .auth-card .auth-link {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 13px;
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -26,6 +98,7 @@
             max-width: 300px;
             text-align: center;
             position: relative;
+            border-radius: 10px;
         }
 
         .close {
@@ -63,17 +136,16 @@
 </head>
 
 <body>
-    <div class="center-container">
+    <div class="auth-card">
+        <h1>BROTHERS</h1>
         <form onsubmit="login(event)">
-            <label for="mail">メールアドレス:</label>
+            <label for="mail">メールアドレス</label>
             <input type="email" id="mail" name="mail" required>
-            <br>
-            <label for="pass">パスワード:</label>
+            <label for="pass">パスワード</label>
             <input type="password" id="pass" name="pass" required>
-            <br>
             <button type="submit">ログイン</button>
         </form>
-        <p>会員登録がお済みでない方は<a href="/auth/signUp.php">こちら</a></p>
+        <p class="auth-link">会員登録がお済みでない方は<a href="/auth/signUp.php">こちら</a></p>
     </div>
 
     <!-- モーダル -->

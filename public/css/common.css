@@ -94,16 +94,22 @@ ul.gnav-list{
 
 
   h2{
-    background-color:silver;
+    border-left: 4px solid slategrey;
+    padding: 4px 10px;
+    background-color: rgba(128, 128, 128, 0.12);
   }
 
   h3{
-    background-color: lightskyblue;
+    border-left: 4px solid cornflowerblue;
+    padding: 4px 10px;
+    background-color: rgba(100, 149, 237, 0.12);
   }
 
   .heading-title {
     text-align: center;
-    /* font-size: 32px; */
+    border-left: none;
+    padding: 8px 0;
+    background-color: rgba(128, 128, 128, 0.12);
   }
 
   .footer-info{

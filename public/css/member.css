@@ -1,9 +1,12 @@
 .info-text p {
-  width: 308px;
-  height: 200px;
+  height: 160px;
   overflow: auto;
 }
 
 .member-area {
-  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }

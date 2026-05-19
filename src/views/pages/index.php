@@ -10,15 +10,14 @@
   <link rel="stylesheet" href="/css/spm.css" type="text/css" media="screen and (max-width: 375px)">
   <link rel="icon" href="/img/fabicon.ico">
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/slick/slick.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="/css/slick/slick-theme.css" media="screen" />
   <script src="/css/slick/slick.min.js"></script>
 </head>
 
 <body>
+  <?php require __DIR__ . '/../layout/header.php'; ?>
   <div class="wrapper">
-    <?php require __DIR__ . '/../layout/header.php'; ?>
     <section>
       <h2 class="heading-title">BROTHERSとは？</h2>
       <div class="slider">

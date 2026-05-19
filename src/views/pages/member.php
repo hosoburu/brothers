@@ -38,7 +38,7 @@
                 <td><?php echo $h($row['atk']) ?></td>
               </tr>
               <tr>
-                <th class="col-2">DFE</th>
+                <th class="col-2">DEF</th>
                 <td><?php echo $h($row['def']) ?></td>
               </tr>
               <tr>
@@ -83,6 +83,7 @@
               <input type="submit" value="情報更新">
             </p>
           </form>
+        </div>
       </section>
     <?php } ?>
   </div>
