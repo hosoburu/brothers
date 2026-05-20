@@ -27,9 +27,6 @@
           <div class="info-text">
             <h1 id="<?php echo $h($row['id']) ?>">No.<?php echo $h($row['id']) ?> <?php echo $h($row['name']) ?> </h1>
             <p><?php echo $h($row['explanation']) ?></p>
-            <?php if (!empty($row['catchphrase'])) { ?>
-              <p class="catchphrase">口癖：〜<?php echo $h($row['catchphrase']) ?></p>
-            <?php } ?>
           </div>
           <div class="container">
             <div>
@@ -78,6 +75,14 @@
             </tr>
             <tr>
               <td><?php echo $h($row['skill6']) ?></td>
+            </tr>
+          </table>
+          <table class="skill">
+            <tr>
+              <th class="skill" colspan="2">口癖</th>
+            </tr>
+            <tr>
+              <td><?php echo !empty($row['catchphrase']) ? $h($row['catchphrase']) : '-' ?></td>
             </tr>
           </table>
           <form name="form1" method="post" action="/update/form.php">

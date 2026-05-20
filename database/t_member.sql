@@ -13,5 +13,6 @@ CREATE TABLE `t_member` (
     `skill3` char(255) DEFAULT NULL,
     `skill4` char(255) DEFAULT NULL,
     `skill5` char(255) DEFAULT NULL,
-    `skill6` char(255) DEFAULT NULL
+    `skill6` char(255) DEFAULT NULL,
+    `catchphrase` char(255) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_general_ci;
