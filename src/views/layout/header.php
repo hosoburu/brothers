@@ -18,6 +18,7 @@
                 <li><a href="/pages/history.php">歴史</a></li>
                 <?php if (isset($_SESSION['login_flag']) && $_SESSION['login_flag']) : ?>
                     <li><a href="/entry/form.php">団員募集</a></li>
+                    <li><a href="/news/form.php">ニュース投稿</a></li>
                 <?php else : ?>
                     <li><span style="color: lightgray;">団員募集</span></li>
                 <?php endif; ?>

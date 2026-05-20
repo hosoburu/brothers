@@ -16,4 +16,22 @@ class NewsModel {
                 ORDER BY n.id";
         return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getNextId(): int {
+        $row = $this->db->query("SELECT COALESCE(MAX(id), 0) + 1 AS next_id FROM t_news")->fetch(PDO::FETCH_ASSOC);
+        return (int) $row['next_id'];
+    }
+
+    public function insert(int $id, int $nameId, string $explanation, string $hyperlink, string $postedDate): void {
+        $sql = "INSERT INTO t_news (id, name_id, explanation, hyperlink, posted_date)
+                VALUES (:id, :name_id, :explanation, :hyperlink, :posted_date)";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([
+            ':id'          => $id,
+            ':name_id'     => $nameId,
+            ':explanation' => $explanation,
+            ':hyperlink'   => $hyperlink,
+            ':posted_date' => $postedDate,
+        ]);
+    }
 }
