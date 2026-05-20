@@ -33,8 +33,11 @@
           </td>
         </tr>
         <tr>
-          <td><label for="explanation">内容：</label></td>
-          <td><textarea id="explanation" name="explanation" cols="30" rows="5"></textarea></td>
+          <td><label for="explanation">内容（プロンプト）：</label></td>
+          <td>
+            <textarea id="explanation" name="explanation" cols="30" rows="5" placeholder="例：ランキング機能を追加した。ATKやHPで順位が見られる。"></textarea>
+            <small style="display:block;color:#888;margin-top:4px;">メモ書きで入力するとAIが文章に整えます</small>
+          </td>
         </tr>
         <tr>
           <td><label for="hyperlink">リンク：</label></td>

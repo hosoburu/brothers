@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../models/NewsModel.php';
 require_once __DIR__ . '/../models/MemberModel.php';
 require_once __DIR__ . '/../common/security/csrf.php';
+require_once __DIR__ . '/../common/GeminiClient.php';
 
 class NewsController {
     private NewsModel $newsModel;
@@ -40,6 +41,14 @@ class NewsController {
         $postedDate  = $_POST['posted_date'] ?? date('Y-m-d');
 
         $errorFlg = ($nameId === 0) || empty($explanation) || empty($postedDate);
+
+        // バリデーション通過後にGeminiで文章を整形する。失敗時は入力テキストをそのまま使う。
+        if (!$errorFlg) {
+            $generated = (new GeminiClient())->generateNewsText($explanation);
+            if ($generated !== null) {
+                $explanation = $generated;
+            }
+        }
 
         $_SESSION['news_params'] = compact('nameId', 'explanation', 'hyperlink', 'postedDate');
 
