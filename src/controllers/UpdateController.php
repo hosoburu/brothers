@@ -43,6 +43,7 @@ class UpdateController {
         $skill4      = $row['skill4']      ?? '';
         $skill5      = $row['skill5']      ?? '';
         $skill6      = $row['skill6']      ?? '';
+        $catchphrase = $row['catchphrase'] ?? '';
 
         $csrfToken = csrf_token();
         require __DIR__ . '/../views/update/form.php';
@@ -68,11 +69,12 @@ class UpdateController {
         $skill4      = $_POST['skill4']      ?? '';
         $skill5      = $_POST['skill5']      ?? '';
         $skill6      = $_POST['skill6']      ?? '';
+        $catchphrase = $_POST['catchphrase'] ?? '';
 
         // SQLではなくパラメータをセッションに保存（SQLインジェクション対策）
         $_SESSION['update_params'] = compact(
             'name', 'explanation', 'atk', 'def', 'spd', 'hp', 'mp',
-            'skill1', 'skill2', 'skill3', 'skill4', 'skill5', 'skill6'
+            'skill1', 'skill2', 'skill3', 'skill4', 'skill5', 'skill6', 'catchphrase'
         );
 
         $errorFlg  = empty($name) || empty($atk) || empty($def) || empty($spd)
@@ -105,6 +107,7 @@ class UpdateController {
             ':skill4'      => $p['skill4']      ?? '',
             ':skill5'      => $p['skill5']      ?? '',
             ':skill6'      => $p['skill6']      ?? '',
+            ':catchphrase' => $p['catchphrase'] ?? '',
         ]);
 
         unset($_SESSION['update_params']);

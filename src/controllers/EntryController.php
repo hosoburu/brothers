@@ -47,11 +47,12 @@ class EntryController {
         $skill4      = $_POST['skill4']      ?? '';
         $skill5      = $_POST['skill5']      ?? '';
         $skill6      = $_POST['skill6']      ?? '';
+        $catchphrase = $_POST['catchphrase'] ?? '';
 
         // confirm→finish間のパラメータ引き継ぎ: $_POSTを再送しないことで改ざんを防ぐ
         $_SESSION['register_params'] = compact(
             'name', 'explanation', 'img', 'atk', 'def', 'spd', 'hp', 'mp',
-            'skill1', 'skill2', 'skill3', 'skill4', 'skill5', 'skill6'
+            'skill1', 'skill2', 'skill3', 'skill4', 'skill5', 'skill6', 'catchphrase'
         );
 
         $errorFlg  = empty($id) || empty($name) || empty($atk) || empty($def)
@@ -89,6 +90,7 @@ class EntryController {
             ':skill4'      => $p['skill4']      ?? '',
             ':skill5'      => $p['skill5']      ?? '',
             ':skill6'      => $p['skill6']      ?? '',
+            ':catchphrase' => $p['catchphrase'] ?? '',
         ]);
 
         unset($_SESSION['register_params']); // 二重送信を防ぐためDBへの書き込み後に破棄

@@ -81,6 +81,10 @@
           <td><label for="skill6">スキル6：</label></td>
           <td><input type="text" id="skill6" name="skill6"></td>
         </tr>
+        <tr>
+          <td><label for="catchphrase">口癖（語尾）：</label></td>
+          <td><input type="text" id="catchphrase" name="catchphrase" placeholder="例：バラ"></td>
+        </tr>
       </table>
       <div class="test">
         <input type="submit" value="確認" <?php echo isset($_SESSION['name']) ? '' : 'disabled'; ?>>

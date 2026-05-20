@@ -73,6 +73,10 @@
           <td><label>スキル6：</label></td>
           <td><input type="text" name="skill6" value="<?php echo $h($skill6) ?>"></td>
         </tr>
+        <tr>
+          <td><label>口癖（語尾）：</label></td>
+          <td><input type="text" name="catchphrase" value="<?php echo $h($catchphrase) ?>"></td>
+        </tr>
       </table>
       <div class="test">
         <input type="submit" value="確認">

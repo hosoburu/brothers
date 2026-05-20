@@ -33,9 +33,9 @@ class MemberModel {
 
     public function insert(int $id, array $params): void {
         $sql = "INSERT INTO t_member
-                    (id, name, explanation, img, atk, def, spd, hp, mp, skill1, skill2, skill3, skill4, skill5, skill6)
+                    (id, name, explanation, img, atk, def, spd, hp, mp, skill1, skill2, skill3, skill4, skill5, skill6, catchphrase)
                 VALUES
-                    (:id, :name, :explanation, :img, :atk, :def, :spd, :hp, :mp, :skill1, :skill2, :skill3, :skill4, :skill5, :skill6)";
+                    (:id, :name, :explanation, :img, :atk, :def, :spd, :hp, :mp, :skill1, :skill2, :skill3, :skill4, :skill5, :skill6, :catchphrase)";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(array_merge([':id' => $id], $params));
     }
@@ -53,7 +53,7 @@ class MemberModel {
         $sql = "UPDATE t_member
                 SET name=:name, explanation=:explanation, atk=:atk, def=:def, spd=:spd,
                     hp=:hp, mp=:mp, skill1=:skill1, skill2=:skill2, skill3=:skill3,
-                    skill4=:skill4, skill5=:skill5, skill6=:skill6
+                    skill4=:skill4, skill5=:skill5, skill6=:skill6, catchphrase=:catchphrase
                 WHERE id=:id";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(array_merge($params, [':id' => $id]));

@@ -27,6 +27,9 @@
           <div class="info-text">
             <h1 id="<?php echo $h($row['id']) ?>">No.<?php echo $h($row['id']) ?> <?php echo $h($row['name']) ?> </h1>
             <p><?php echo $h($row['explanation']) ?></p>
+            <?php if (!empty($row['catchphrase'])) { ?>
+              <p class="catchphrase">口癖：〜<?php echo $h($row['catchphrase']) ?></p>
+            <?php } ?>
           </div>
           <div class="container">
             <div>
