@@ -13,7 +13,7 @@ class NewsModel {
         $sql = "SELECT n.id, m.name, m.img, n.explanation, n.hyperlink, n.posted_date
                 FROM t_news AS n
                 LEFT OUTER JOIN t_member AS m ON n.name_id = m.id
-                ORDER BY n.id";
+                ORDER BY n.id DESC";
         return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
