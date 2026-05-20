@@ -40,6 +40,15 @@ class MemberModel {
         $stmt->execute(array_merge([':id' => $id], $params));
     }
 
+    // $stat はホワイトリスト照合済みのカラム名のみ受け取る（SQL インジェクション対策）
+    public function getOrderedBy(string $stat): array {
+        $allowed = ['atk', 'def', 'spd', 'hp', 'mp'];
+        if (!in_array($stat, $allowed, true)) {
+            $stat = 'atk';
+        }
+        return $this->db->query("SELECT * FROM t_member ORDER BY {$stat} DESC")->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function update(int $id, array $params): void {
         $sql = "UPDATE t_member
                 SET name=:name, explanation=:explanation, atk=:atk, def=:def, spd=:spd,

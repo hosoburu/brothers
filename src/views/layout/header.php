@@ -22,6 +22,7 @@
                 <?php else : ?>
                     <li><span style="color: lightgray;">団員募集</span></li>
                 <?php endif; ?>
+                <li><a href="/pages/ranking.php">ランキング</a></li>
                 <li><a href="/pages/faq.php">よくある質問</a></li>
             </ul>
         </div>

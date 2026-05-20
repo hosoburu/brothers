@@ -30,4 +30,15 @@ class PageController {
     public function front(): void {
         require __DIR__ . '/../views/pages/front.php';
     }
+
+    public function ranking(): void {
+        $memberModel = new MemberModel();
+        $allowed     = ['atk', 'def', 'spd', 'hp', 'mp'];
+        $stat        = $_GET['stat'] ?? 'atk';
+        if (!in_array($stat, $allowed, true)) {
+            $stat = 'atk';
+        }
+        $members = $memberModel->getOrderedBy($stat);
+        require __DIR__ . '/../views/pages/ranking.php';
+    }
 }
