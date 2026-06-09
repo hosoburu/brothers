@@ -9,15 +9,21 @@ class GeminiClient {
         $this->apiKey = $env['GEMINI_API_KEY'] ?? '';
     }
 
-    // $userPrompt をニュース文として整形して返す。失敗時は null。
-    public function generateNewsText(string $userPrompt): ?string {
+    // $userPrompt をニュース文として整形して返す。$catchphrase が渡された場合は文中に自然に混ぜる。失敗時は null。
+    public function generateNewsText(string $userPrompt, string $catchphrase = ''): ?string {
         if (empty($this->apiKey)) {
             return null;
         }
 
+        $catchphraseInstruction = '';
+        if ($catchphrase !== '') {
+            $catchphraseInstruction = 'また、投稿者の口癖は「' . $catchphrase . '」です。この口癖を文末など自然な箇所に1回だけ組み込んでください。';
+        }
+
         $systemInstruction = 'あなたはゲームギルド「BROTHERS」のニュース担当です。'
             . 'ユーザーが入力したメモをもとに、ニュース投稿文を2〜3文で自然な日本語に整えてください。'
-            . '箇条書き・markdown・見出しは使わず、平文のみで出力してください。';
+            . '箇条書き・markdown・見出しは使わず、平文のみで出力してください。'
+            . $catchphraseInstruction;
 
         $body = json_encode([
             'system_instruction' => [

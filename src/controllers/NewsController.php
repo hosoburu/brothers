@@ -44,7 +44,9 @@ class NewsController {
 
         // バリデーション通過後にGeminiで文章を整形する。失敗時は入力テキストをそのまま使う。
         if (!$errorFlg) {
-            $generated = (new GeminiClient())->generateNewsText($explanation);
+            $member      = $this->memberModel->getById($nameId);
+            $catchphrase = (string) ($member['catchphrase'] ?? '');
+            $generated   = (new GeminiClient())->generateNewsText($explanation, $catchphrase);
             if ($generated !== null) {
                 $explanation = $generated;
             }

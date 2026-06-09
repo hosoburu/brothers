@@ -50,6 +50,46 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 ```
 
 
+## 本番DB操作
+
+SSH でサーバーにログインし、MySQL に接続して操作する。
+接続情報は `.env.production` を参照。
+
+接続情報はすべて `.env` / `.env.production` を参照し、以下の変数を実際の値に置き換えて実行する。
+
+| 変数 | 参照ファイル | 内容 |
+|------|-------------|------|
+| `DEPLOY_USER` | `.env` | SSHユーザー名 |
+| `DEPLOY_HOST` | `.env` | サーバーホスト名 |
+| `DEPLOY_PORT` | `.env` | SSHポート番号 |
+| `DEPLOY_KEY` | `.env` | SSH秘密鍵パス |
+| `DB_USER` | `.env.production` | MySQLユーザー名 |
+| `DB_PASS` | `.env.production` | MySQLパスワード |
+| `DB_NAME` | `.env.production` | データベース名 |
+
+### MySQL に接続する
+
+```bash
+ssh <DEPLOY_USER>@<DEPLOY_HOST> -p <DEPLOY_PORT> -i <DEPLOY_KEY> \
+  "mysql -u <DB_USER> -p'<DB_PASS>' <DB_NAME>"
+```
+
+### SQL を1行実行する（例：カラム追加）
+
+```bash
+ssh <DEPLOY_USER>@<DEPLOY_HOST> -p <DEPLOY_PORT> -i <DEPLOY_KEY> \
+  "mysql -u <DB_USER> -p'<DB_PASS>' <DB_NAME> -e \"ALTER TABLE t_member ADD COLUMN catchphrase char(255) DEFAULT NULL;\""
+```
+
+### テーブル定義を確認する
+
+```bash
+ssh <DEPLOY_USER>@<DEPLOY_HOST> -p <DEPLOY_PORT> -i <DEPLOY_KEY> \
+  "mysql -u <DB_USER> -p'<DB_PASS>' <DB_NAME> -e \"DESCRIBE t_member;\""
+```
+
+> カラムを追加したら `database/` 配下の対応する `.sql` ファイルも更新すること。
+
 ## ターミナル操作（Mac）
 
 ターミナルを閉じた後の再開手順:
