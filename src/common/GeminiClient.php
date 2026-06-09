@@ -2,7 +2,7 @@
 
 class GeminiClient {
     private string $apiKey;
-    private string $endpoint = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent';
+    private string $endpoint = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
 
     public function __construct() {
         $env = parse_ini_file(__DIR__ . '/../../.env', false, INI_SCANNER_RAW);
@@ -35,7 +35,7 @@ class GeminiClient {
             'generationConfig' => [
                 'maxOutputTokens' => 300,
                 'temperature'     => 0.7,
-                // gemini-flash-latest は thinking モデルのため内部思考でトークンを使い切らないよう無効化
+                // gemini-2.5-flash は thinking モデルのため内部思考でトークンを使い切らないよう無効化
                 'thinkingConfig'  => ['thinkingBudget' => 0],
             ],
         ]);
