@@ -170,3 +170,29 @@ ul.gnav-list{
     z-index: 50;
   }
 
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 22px;
+    padding: 10px;
+    padding-left: 55px;
+  }
+  header h1 {
+    line-height: 1.5rem;
+  }
+  .header-page-title {
+    padding-left: 55px;
+    font-size: 12px;
+    flex-shrink: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .login-status {
+    font-size: 11px;
+    padding-right: 8px;
+  }
+  body {
+    padding-top: 60px;
+  }
+}
+
