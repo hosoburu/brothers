@@ -2,7 +2,9 @@
 <div class="main">
     <header>
         <h1><a href="/index.php">BROTHERS</a></h1>
-        <?php include(__DIR__ . '/../../common/security/security.php'); ?>
+        <div class="login-status">
+            <?php include(__DIR__ . '/../../common/security/security.php'); ?>
+        </div>
     </header>
 
     <nav>
