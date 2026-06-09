@@ -110,20 +110,18 @@ h1{
   margin: auto;
 }
 
-/* https://www.will3in.co.jp/frontend-blog/article/shrink-webpage-with-iframe-responsive/ */
 .frame {
-  height: 0;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
   overflow: hidden;
 }
-.pc .frame {
-  padding-top: 62.5%;
-}
-iframe {
-  transform-origin: 0 0;
-}
 .pc iframe {
-  margin-top: -62.5%;
-  transform: scale(0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .wrapper {
@@ -141,7 +139,7 @@ iframe {
 }
 
 .wrapper .slider {
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .text_area{

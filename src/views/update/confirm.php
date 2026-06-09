@@ -13,8 +13,8 @@
 </head>
 
 <body>
+  <?php $pageTitle = "UPDATE CONFIRM"; ?>
   <?php require __DIR__ . '/../layout/header.php'; ?>
-  <h2 class="heading-title">UPDATE CONFIRM</h2>
 
   <?php $h = fn($v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8'); ?>
 

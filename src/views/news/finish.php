@@ -11,9 +11,8 @@
 </head>
 
 <body>
+  <?php $pageTitle = "NEWS POST COMPLETION"; ?>
   <?php require __DIR__ . '/../layout/header.php'; ?>
-
-  <h2 class="heading-title">NEWS POST COMPLETION</h2>
 
   <p>ニュースの投稿が完了しました。</p>
   <p>

@@ -83,6 +83,15 @@ ul.gnav-list{
     background-color: darkgrey;
     border-radius: 25px;
     margin-bottom: 3px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+  }
+
+  body {
+    padding-top: 80px;
   }
 
   header h1 {
@@ -145,7 +154,19 @@ ul.gnav-list{
     background-color: rgba(128, 128, 128, 0.12);
   }
 
+  .header-page-title {
+    padding-left: 70px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1a1a1a;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
   .footer-info{
     background-color:darkgrey;
+    position: sticky;
+    bottom: 0;
+    z-index: 50;
   }
 

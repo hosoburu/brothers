@@ -16,10 +16,10 @@
 </head>
 
 <body>
+  <?php $pageTitle = "BROTHERSとは？"; ?>
   <?php require __DIR__ . '/../layout/header.php'; ?>
   <div class="wrapper">
     <section>
-      <h2 class="heading-title">BROTHERSとは？</h2>
       <div class="slider">
         <div class="pc">
           <div class="frame">
@@ -48,14 +48,14 @@
 
 <script>
   jQuery(function($) {
-    $(window).on('load resize', function() {
-      var frameWidth = $('.pc .frame').width();
-      var aspectRatio = 16 / 9;
-
-      $('.pc iframe').css({
-        'width': frameWidth + 'px',
-        'height': frameWidth / aspectRatio + 'px'
-      });
+    $('.slider').slick({
+      autoplay: true,
+      autoplaySpeed: 7000,
+      speed: 700,
+      dots: true,
+      arrows: true,
+      pauseOnHover: true,
+      pauseOnFocus: true
     });
   });
 </script>

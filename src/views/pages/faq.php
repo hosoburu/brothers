@@ -13,8 +13,8 @@
 </head>
 
 <body>
+  <?php $pageTitle = "よくある質問"; ?>
   <?php require __DIR__ . '/../layout/header.php'; ?>
-  <h2 class="heading-title">よくある質問</h2>
   <section class="faq-section">
     <div class="faq-content">
       <h2>誰が一番強いのですか？</h2>

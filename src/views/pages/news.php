@@ -12,10 +12,10 @@
 </head>
 
 <body>
+<?php $pageTitle = "NEWS"; ?>
 <?php require __DIR__ . '/../layout/header.php'; ?>
 <?php $h = fn($v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8'); ?>
 <section>
-  <h2 class="heading-title">NEWS</h2>
   <ul class="top-list">
     <?php foreach ($newsList as $row) { ?>
       <li>

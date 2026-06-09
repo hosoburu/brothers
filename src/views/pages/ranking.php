@@ -19,14 +19,14 @@
     .rank-1 { font-weight: bold; color: #c8a000; }
     .rank-2 { font-weight: bold; color: #888; }
     .rank-3 { font-weight: bold; color: #a0522d; }
+    .ranking-table .member-thumb { width: 40px; height: 40px; object-fit: cover; border-radius: 50%; }
   </style>
 </head>
 
 <body>
+  <?php $pageTitle = "RANKING"; ?>
   <?php require __DIR__ . '/../layout/header.php'; ?>
   <?php $h = fn($v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8'); ?>
-
-  <h2 class="heading-title">RANKING</h2>
 
   <nav class="ranking-nav">
     <?php foreach (['atk' => 'ATK', 'def' => 'DEF', 'spd' => 'SPD', 'hp' => 'HP', 'mp' => 'MP'] as $key => $label) { ?>
@@ -50,7 +50,12 @@
         <?php $rank = $i + 1; ?>
         <tr>
           <td class="<?php echo $rank <= 3 ? 'rank-' . $rank : ''; ?>"><?php echo $h($rank); ?></td>
-          <td><a href="/pages/member.php#<?php echo $h($row['id']); ?>"><?php echo $h($row['name']); ?></a></td>
+          <td>
+            <div style="display:flex;align-items:center;gap:8px;justify-content:center;">
+              <img src="<?php echo $h($row['img']); ?>" alt="<?php echo $h($row['name']); ?>" class="member-thumb">
+              <a href="/pages/member.php#<?php echo $h($row['id']); ?>"><?php echo $h($row['name']); ?></a>
+            </div>
+          </td>
           <td><?php echo $h($row[$stat]); ?></td>
         </tr>
       <?php } ?>

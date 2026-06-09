@@ -13,8 +13,8 @@
 </head>
 
 <body>
+  <?php $pageTitle = "RECRUITMENT COMPLETION"; ?>
   <?php require __DIR__ . '/../layout/header.php'; ?>
-  <h2 class="heading-title">RECRUITMENT COMPLETION</h2>
 
   <?php $h = fn($v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8'); ?>
   <p>メンバーの登録が完了しました。</p>

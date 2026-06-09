@@ -13,9 +13,9 @@
 </head>
 
 <body>
+  <?php $pageTitle = "BROTHERSの歴史"; ?>
   <?php require __DIR__ . '/../layout/header.php'; ?>
   <section>
-    <h2 class="heading-title">BROTHERSの歴史</h2>
     <div class="top-feature">
       <div class="top-feature_box">
         <h3>1994年 12月 旧ヌイグルミ共和国が建国</h3>

@@ -35,7 +35,7 @@ section {
   flex: 0 1 90px;
 }
 
-.top-list li time,p {
+.top-list li time, .top-list li p {
   font-size: 28px;
   margin-left: 16px;
 }

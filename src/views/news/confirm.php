@@ -12,10 +12,9 @@
 </head>
 
 <body>
+  <?php $pageTitle = "NEWS POST CONFIRM"; ?>
   <?php require __DIR__ . '/../layout/header.php'; ?>
   <?php $h = fn($v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8'); ?>
-
-  <h2 class="heading-title">NEWS POST CONFIRM</h2>
 
   <?php if ($errorFlg) { ?>
     <p>エラーがあります（メンバー・内容・日付は必須です）</p>

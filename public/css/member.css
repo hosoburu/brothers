@@ -3,10 +3,32 @@
   overflow: auto;
 }
 
+.member-wrapper {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 16px;
+  transition: margin 0.3s;
+}
+
 .member-area {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   padding: 20px;
+}
+
+.member-area .info-text p {
+  text-align: center;
+}
+
+.member-area .container > div {
+  text-align: center;
+}
+
+@media screen and (min-width: 769px) {
+  body:has(#gnav-input:checked) .member-wrapper {
+    margin: 0 0 0 250px;
+    max-width: calc(100vw - 250px);
+  }
 }

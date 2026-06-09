@@ -13,9 +13,8 @@
 </head>
 
 <body>
+  <?php $pageTitle = "RECRUITMENT"; ?>
   <?php require __DIR__ . '/../layout/header.php'; ?>
-
-  <h2 class="heading-title">RECRUITMENT</h2>
 
   <div class="center">
     <form name="form1" method="post" action="/entry/confirm.php">

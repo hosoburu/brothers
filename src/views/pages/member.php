@@ -17,9 +17,10 @@
 </head>
 
 <body>
+  <?php $pageTitle = "MEMBER LIST"; ?>
   <?php require __DIR__ . '/../layout/header.php'; ?>
   <?php $h = fn($v) => htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8'); ?>
-  <h2 class="heading-title">MEMBER LIST</h2>
+  <div class="member-wrapper">
   <div class="member-area">
     <?php foreach ($members as $row) { ?>
       <section id="info" class="info-area">
@@ -94,6 +95,7 @@
         </div>
       </section>
     <?php } ?>
+  </div>
   </div>
   <?php require __DIR__ . '/../layout/footer.php'; ?>
 </body>

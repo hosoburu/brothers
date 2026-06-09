@@ -1,6 +1,9 @@
 <?php if (session_status() === PHP_SESSION_NONE) { session_start(); } ?>
 <div class="main">
     <header>
+        <?php if (!empty($pageTitle)): ?>
+        <span class="header-page-title"><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8') ?></span>
+        <?php endif; ?>
         <h1><a href="/index.php">BROTHERS</a></h1>
         <div class="login-status">
             <?php include(__DIR__ . '/../../common/security/security.php'); ?>
